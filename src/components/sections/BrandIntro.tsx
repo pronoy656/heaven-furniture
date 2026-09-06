@@ -66,7 +66,6 @@ export default function BrandIntro() {
                     src="/owner.png"
                     alt="Abul Kalam Bhuiyan - Founder & Managing Director of Heaven Furniture Mart"
                     fill
-                    priority
                     className="object-contain sm:object-cover object-center"
                     sizes="(max-width: 1024px) 100vw, 40vw"
                   />
