@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { SplashScreen } from "@/components/layout";
 import "./globals.css";
 
 const body = Inter({
@@ -83,9 +84,11 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icon.svg" />
       </head>
       <body className="font-body antialiased" suppressHydrationWarning>
+        <SplashScreen />
         <div className="grain-overlay" aria-hidden="true" />
         {children}
       </body>
     </html>
   );
 }
+
