@@ -85,7 +85,7 @@ export default function ShopByRoom() {
             <Reveal className="w-full h-full flex">
               <Link
                 href={living.href}
-                className="group relative w-full min-h-[460px] sm:min-h-[580px] lg:min-h-[700px] rounded-3xl overflow-hidden block shadow-sm hover:shadow-2xl transition-all duration-500"
+                className="group relative w-full min-h-[420px] sm:min-h-[540px] lg:min-h-[700px] rounded-3xl overflow-hidden block shadow-sm hover:shadow-2xl active:scale-[0.99] transition-all duration-500"
               >
                 <Image
                   src={living.image}
@@ -97,39 +97,39 @@ export default function ShopByRoom() {
                 />
                 
                 {/* Default subtle base shadow */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent group-hover:opacity-0 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent lg:from-black/50 lg:via-transparent lg:group-hover:opacity-0 transition-opacity duration-500" />
 
                 {/* Rich Linear Gradient Sheet on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/65 to-transparent opacity-0 lg:group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
 
                 {/* Bottom Content Area */}
-                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 z-10 flex flex-col justify-end">
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7 lg:p-8 z-10 flex flex-col justify-end">
                   
                   {/* Default State Pill Button */}
-                  <div className="inline-flex items-center gap-2.5 rounded-full bg-white/95 px-5 py-2.5 shadow-lg backdrop-blur-md border border-white/40 w-fit transition-all duration-300 group-hover:bg-[#163A2B] group-hover:border-[#E5A83B]/30 group-hover:shadow-xl">
-                    <span className="font-display text-sm sm:text-base font-bold text-neutral-900 group-hover:text-white transition-colors">
+                  <div className="inline-flex items-center gap-2.5 rounded-full bg-white/95 px-4 sm:px-5 py-2 sm:py-2.5 shadow-lg backdrop-blur-md border border-white/40 w-fit transition-all duration-300 group-hover:bg-[#163A2B] group-hover:border-[#E5A83B]/30 group-hover:shadow-xl active:scale-95">
+                    <span className="font-display text-xs sm:text-sm lg:text-base font-bold text-neutral-900 group-hover:text-white transition-colors">
                       {living.title}
                     </span>
-                    <span className="h-6 w-6 rounded-full bg-black text-white flex items-center justify-center text-xs group-hover:bg-[#E5A83B] group-hover:text-[#163A2B] transition-colors">
+                    <span className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-black text-white flex items-center justify-center text-[10px] sm:text-xs group-hover:bg-[#E5A83B] group-hover:text-[#163A2B] transition-colors">
                       <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="9 18 15 12 9 6" />
                       </svg>
                     </span>
                   </div>
 
-                  {/* Expanded Hover Information Slide-up */}
-                  <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
+                  {/* Information block: Visible on mobile, expands smoothly on desktop hover */}
+                  <div className="lg:grid lg:grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
                     <div className="overflow-hidden">
-                      <div className="pt-4 space-y-2 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">
-                        <span className="text-xs font-bold uppercase tracking-widest text-[#E5A83B] block">
+                      <div className="pt-3 sm:pt-4 space-y-1.5 sm:space-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 lg:translate-y-4 lg:group-hover:translate-y-0 transition-all duration-500 delay-75">
+                        <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#E5A83B] block">
                           {living.tag}
                         </span>
                         
-                        <p className="text-xs sm:text-sm text-neutral-200 font-body leading-relaxed max-w-lg">
+                        <p className="text-xs sm:text-sm text-neutral-200 font-body leading-relaxed max-w-lg line-clamp-2 sm:line-clamp-none">
                           {living.copy}
                         </p>
 
-                        <div className="pt-2 flex items-center gap-2 text-xs font-bold text-[#E5A83B] uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                        <div className="pt-1 sm:pt-2 flex items-center gap-2 text-xs font-bold text-[#E5A83B] uppercase tracking-wider group-hover:translate-x-1 transition-transform">
                           <span>{living.exploreText}</span>
                           <span>→</span>
                         </div>
@@ -152,7 +152,7 @@ export default function ShopByRoom() {
               <Reveal delay={0.1} className="h-full">
                 <Link
                   href={bedroom.href}
-                  className="group relative w-full h-[300px] sm:h-full min-h-[300px] lg:min-h-[320px] rounded-3xl overflow-hidden block shadow-sm hover:shadow-2xl transition-all duration-500"
+                  className="group relative w-full h-[280px] sm:h-full min-h-[280px] lg:min-h-[320px] rounded-3xl overflow-hidden block shadow-sm hover:shadow-2xl active:scale-[0.99] transition-all duration-500"
                 >
                   <Image
                     src={bedroom.image}
@@ -162,33 +162,33 @@ export default function ShopByRoom() {
                     sizes="(max-width: 1024px) 100vw, 25vw"
                   />
                   
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent group-hover:opacity-0 transition-opacity duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent lg:from-black/50 lg:via-transparent lg:group-hover:opacity-0 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/65 to-transparent opacity-0 lg:group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
 
                   {/* Bottom Content Area */}
-                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 z-10 flex flex-col justify-end">
-                    <div className="inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 shadow-md backdrop-blur-md border border-white/40 w-fit transition-all duration-300 group-hover:bg-[#163A2B] group-hover:border-[#E5A83B]/30">
+                  <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 lg:p-6 z-10 flex flex-col justify-end">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-white/95 px-3.5 sm:px-4 py-1.5 sm:py-2 shadow-md backdrop-blur-md border border-white/40 w-fit transition-all duration-300 group-hover:bg-[#163A2B] group-hover:border-[#E5A83B]/30 active:scale-95">
                       <span className="font-display text-xs sm:text-sm font-bold text-neutral-900 group-hover:text-white transition-colors">
                         {bedroom.title}
                       </span>
-                      <span className="h-5 w-5 rounded-full bg-black text-white flex items-center justify-center text-[10px] group-hover:bg-[#E5A83B] group-hover:text-[#163A2B] transition-colors">
+                      <span className="h-4.5 w-4.5 sm:h-5 sm:w-5 rounded-full bg-black text-white flex items-center justify-center text-[9px] sm:text-[10px] group-hover:bg-[#E5A83B] group-hover:text-[#163A2B] transition-colors">
                         <svg className="h-2.5 w-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="9 18 15 12 9 6" />
                         </svg>
                       </span>
                     </div>
 
-                    {/* Hover Info */}
-                    <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
+                    {/* Info Block */}
+                    <div className="lg:grid lg:grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
                       <div className="overflow-hidden">
-                        <div className="pt-3 space-y-1.5 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-500 delay-75">
-                          <span className="text-[11px] font-bold uppercase tracking-widest text-[#E5A83B] block">
+                        <div className="pt-2 sm:pt-3 space-y-1 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 lg:translate-y-3 lg:group-hover:translate-y-0 transition-all duration-500 delay-75">
+                          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#E5A83B] block">
                             {bedroom.tag}
                           </span>
-                          <p className="text-xs text-neutral-200 font-body leading-relaxed line-clamp-2">
+                          <p className="text-[11px] sm:text-xs text-neutral-200 font-body leading-relaxed line-clamp-2">
                             {bedroom.copy}
                           </p>
-                          <div className="pt-1 flex items-center gap-1.5 text-[11px] font-bold text-[#E5A83B] uppercase tracking-wider">
+                          <div className="pt-0.5 flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold text-[#E5A83B] uppercase tracking-wider">
                             <span>{bedroom.exploreText}</span>
                             <span>→</span>
                           </div>
@@ -204,7 +204,7 @@ export default function ShopByRoom() {
               <Reveal delay={0.15} className="h-full">
                 <Link
                   href={bathroom.href}
-                  className="group relative w-full h-[300px] sm:h-full min-h-[300px] lg:min-h-[320px] rounded-3xl overflow-hidden block shadow-sm hover:shadow-2xl transition-all duration-500"
+                  className="group relative w-full h-[280px] sm:h-full min-h-[280px] lg:min-h-[320px] rounded-3xl overflow-hidden block shadow-sm hover:shadow-2xl active:scale-[0.99] transition-all duration-500"
                 >
                   <Image
                     src={bathroom.image}
@@ -214,33 +214,33 @@ export default function ShopByRoom() {
                     sizes="(max-width: 1024px) 100vw, 25vw"
                   />
                   
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent group-hover:opacity-0 transition-opacity duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent lg:from-black/50 lg:via-transparent lg:group-hover:opacity-0 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/65 to-transparent opacity-0 lg:group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
 
                   {/* Bottom Content Area */}
-                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 z-10 flex flex-col justify-end">
-                    <div className="inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 shadow-md backdrop-blur-md border border-white/40 w-fit transition-all duration-300 group-hover:bg-[#163A2B] group-hover:border-[#E5A83B]/30">
+                  <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 lg:p-6 z-10 flex flex-col justify-end">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-white/95 px-3.5 sm:px-4 py-1.5 sm:py-2 shadow-md backdrop-blur-md border border-white/40 w-fit transition-all duration-300 group-hover:bg-[#163A2B] group-hover:border-[#E5A83B]/30 active:scale-95">
                       <span className="font-display text-xs sm:text-sm font-bold text-neutral-900 group-hover:text-white transition-colors">
                         {bathroom.title}
                       </span>
-                      <span className="h-5 w-5 rounded-full bg-black text-white flex items-center justify-center text-[10px] group-hover:bg-[#E5A83B] group-hover:text-[#163A2B] transition-colors">
+                      <span className="h-4.5 w-4.5 sm:h-5 sm:w-5 rounded-full bg-black text-white flex items-center justify-center text-[9px] sm:text-[10px] group-hover:bg-[#E5A83B] group-hover:text-[#163A2B] transition-colors">
                         <svg className="h-2.5 w-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="9 18 15 12 9 6" />
                         </svg>
                       </span>
                     </div>
 
-                    {/* Hover Info */}
-                    <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
+                    {/* Info Block */}
+                    <div className="lg:grid lg:grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
                       <div className="overflow-hidden">
-                        <div className="pt-3 space-y-1.5 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-500 delay-75">
-                          <span className="text-[11px] font-bold uppercase tracking-widest text-[#E5A83B] block">
+                        <div className="pt-2 sm:pt-3 space-y-1 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 lg:translate-y-3 lg:group-hover:translate-y-0 transition-all duration-500 delay-75">
+                          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#E5A83B] block">
                             {bathroom.tag}
                           </span>
-                          <p className="text-xs text-neutral-200 font-body leading-relaxed line-clamp-2">
+                          <p className="text-[11px] sm:text-xs text-neutral-200 font-body leading-relaxed line-clamp-2">
                             {bathroom.copy}
                           </p>
-                          <div className="pt-1 flex items-center gap-1.5 text-[11px] font-bold text-[#E5A83B] uppercase tracking-wider">
+                          <div className="pt-0.5 flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold text-[#E5A83B] uppercase tracking-wider">
                             <span>{bathroom.exploreText}</span>
                             <span>→</span>
                           </div>
@@ -258,7 +258,7 @@ export default function ShopByRoom() {
             <Reveal delay={0.2} className="flex-1">
               <Link
                 href={dining.href}
-                className="group relative w-full h-[320px] sm:h-full min-h-[320px] lg:min-h-[340px] rounded-3xl overflow-hidden block shadow-sm hover:shadow-2xl transition-all duration-500"
+                className="group relative w-full h-[300px] sm:h-full min-h-[300px] lg:min-h-[340px] rounded-3xl overflow-hidden block shadow-sm hover:shadow-2xl active:scale-[0.99] transition-all duration-500"
               >
                 <Image
                   src={dining.image}
@@ -268,16 +268,16 @@ export default function ShopByRoom() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent group-hover:opacity-0 transition-opacity duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent lg:from-black/50 lg:via-transparent lg:group-hover:opacity-0 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/65 to-transparent opacity-0 lg:group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
 
                 {/* Bottom Content Area */}
-                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 z-10 flex flex-col justify-end">
-                  <div className="inline-flex items-center gap-2.5 rounded-full bg-white/95 px-5 py-2.5 shadow-lg backdrop-blur-md border border-white/40 w-fit transition-all duration-300 group-hover:bg-[#163A2B] group-hover:border-[#E5A83B]/30 group-hover:shadow-xl">
-                    <span className="font-display text-sm sm:text-base font-bold text-neutral-900 group-hover:text-white transition-colors">
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7 lg:p-8 z-10 flex flex-col justify-end">
+                  <div className="inline-flex items-center gap-2.5 rounded-full bg-white/95 px-4 sm:px-5 py-2 sm:py-2.5 shadow-lg backdrop-blur-md border border-white/40 w-fit transition-all duration-300 group-hover:bg-[#163A2B] group-hover:border-[#E5A83B]/30 group-hover:shadow-xl active:scale-95">
+                    <span className="font-display text-xs sm:text-sm lg:text-base font-bold text-neutral-900 group-hover:text-white transition-colors">
                       {dining.title}
                     </span>
-                    <span className="h-6 w-6 rounded-full bg-black text-white flex items-center justify-center text-xs group-hover:bg-[#E5A83B] group-hover:text-[#163A2B] transition-colors">
+                    <span className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-black text-white flex items-center justify-center text-[10px] sm:text-xs group-hover:bg-[#E5A83B] group-hover:text-[#163A2B] transition-colors">
                       <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="9 18 15 12 9 6" />
                       </svg>
@@ -285,10 +285,10 @@ export default function ShopByRoom() {
                   </div>
 
                   {/* Expanded Hover Information Slide-up */}
-                  <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
+                  <div className="lg:grid lg:grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
                     <div className="overflow-hidden">
-                      <div className="pt-3.5 space-y-1.5 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-500 delay-75">
-                        <span className="text-xs font-bold uppercase tracking-widest text-[#E5A83B] block">
+                      <div className="pt-2.5 sm:pt-3.5 space-y-1 sm:space-y-1.5 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 lg:translate-y-3 lg:group-hover:translate-y-0 transition-all duration-500 delay-75">
+                        <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#E5A83B] block">
                           {dining.tag}
                         </span>
                         
@@ -296,7 +296,7 @@ export default function ShopByRoom() {
                           {dining.copy}
                         </p>
 
-                        <div className="pt-1.5 flex items-center gap-2 text-xs font-bold text-[#E5A83B] uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                        <div className="pt-1 sm:pt-1.5 flex items-center gap-2 text-xs font-bold text-[#E5A83B] uppercase tracking-wider group-hover:translate-x-1 transition-transform">
                           <span>{dining.exploreText}</span>
                           <span>→</span>
                         </div>

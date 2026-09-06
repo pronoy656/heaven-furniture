@@ -98,7 +98,7 @@ export default function PopularProducts() {
                     <button
                       type="button"
                       onClick={(e) => toggleWishlist(e, prod.id)}
-                      className={`absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center transition-all hover:scale-110 cursor-pointer border border-neutral-200/80 ${
+                      className={`absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center transition-all hover:scale-110 active:scale-90 cursor-pointer border border-neutral-200/80 ${
                         isFav
                           ? "text-red-500 bg-red-50 border-red-200"
                           : "text-neutral-700 hover:text-red-500 hover:bg-neutral-50"
@@ -157,7 +157,7 @@ export default function PopularProducts() {
                   <button
                     type="button"
                     onClick={(e) => handleAddToCart(e, prod)}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#163A2B] hover:bg-[#0f281e] text-white text-xs font-semibold transition-all hover:shadow-md hover:-translate-y-0.5 cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#163A2B] hover:bg-[#0f281e] active:scale-95 text-white text-xs font-semibold transition-all hover:shadow-md hover:-translate-y-0.5 cursor-pointer"
                     aria-label={`Add ${prod.name} to cart`}
                   >
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.2">

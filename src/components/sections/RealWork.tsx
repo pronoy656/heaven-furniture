@@ -303,52 +303,53 @@ export default function RealWork() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedProject(null)}
-            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
+            className="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
           >
             <motion.div
               initial={{ scale: 0.94, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.94, opacity: 0, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-3xl rounded-3xl bg-white overflow-hidden shadow-2xl border border-neutral-200"
+              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl border border-neutral-200"
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 z-20 h-10 w-10 rounded-full bg-black/60 text-white flex items-center justify-center backdrop-blur-md hover:bg-black transition-colors cursor-pointer text-sm"
+                className="absolute top-3.5 right-3.5 z-20 h-9 w-9 sm:h-10 sm:w-10 rounded-full bg-black/70 text-white flex items-center justify-center backdrop-blur-md hover:bg-black active:scale-90 transition-all cursor-pointer text-xs sm:text-sm"
+                aria-label="Close modal"
               >
                 ✕
               </button>
 
               <div className="grid grid-cols-1 sm:grid-cols-2">
                 {/* Modal Photo */}
-                <div className="relative aspect-square sm:aspect-auto sm:h-full min-h-[280px] bg-neutral-900">
+                <div className="relative aspect-video sm:aspect-auto sm:h-full min-h-[220px] sm:min-h-[280px] bg-neutral-900">
                   <Image
                     src={selectedProject.image}
                     alt={selectedProject.title}
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 text-xs font-semibold text-white backdrop-blur-md">
+                  <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-black/60 text-[11px] font-semibold text-white backdrop-blur-md">
                     {selectedProject.categoryLabel}
                   </div>
                 </div>
 
                 {/* Modal Info */}
-                <div className="p-6 sm:p-8 flex flex-col justify-between">
+                <div className="p-5 sm:p-7 lg:p-8 flex flex-col justify-between">
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-[#E5A83B] block mb-1">
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#E5A83B] block mb-1">
                       {selectedProject.location}
                     </span>
-                    <h3 className="font-display text-2xl font-bold text-[#111815] leading-tight">
+                    <h3 className="font-display text-xl sm:text-2xl font-bold text-[#111815] leading-tight">
                       {selectedProject.title}
                     </h3>
 
-                    <p className="mt-3 text-xs sm:text-sm text-neutral-600 font-body leading-relaxed">
+                    <p className="mt-2.5 text-xs sm:text-sm text-neutral-600 font-body leading-relaxed">
                       {selectedProject.description}
                     </p>
 
-                    <div className="mt-5 space-y-2 pt-4 border-t border-neutral-100 text-xs">
+                    <div className="mt-4 space-y-1.5 pt-3.5 border-t border-neutral-100 text-xs">
                       <div className="flex justify-between">
                         <span className="text-neutral-500">Timber Spec:</span>
                         <span className="font-bold text-[#163A2B]">{selectedProject.timber}</span>
@@ -359,15 +360,15 @@ export default function RealWork() {
                       </div>
                     </div>
 
-                    <div className="mt-4 pt-3 border-t border-neutral-100">
-                      <span className="text-[11px] font-bold uppercase text-neutral-400 block mb-2">
+                    <div className="mt-3.5 pt-3 border-t border-neutral-100">
+                      <span className="text-[10px] font-bold uppercase text-neutral-400 block mb-1.5">
                         Included Pieces:
                       </span>
                       <div className="flex flex-wrap gap-1.5">
                         {selectedProject.includes.map((inc) => (
                           <span
                             key={inc}
-                            className="px-2.5 py-1 rounded-full bg-[#EAF2ED] text-[#163A2B] text-xs font-medium"
+                            className="px-2.5 py-1 rounded-full bg-[#EAF2ED] text-[#163A2B] text-[11px] font-medium"
                           >
                             ✓ {inc}
                           </span>
@@ -376,14 +377,14 @@ export default function RealWork() {
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-neutral-100">
+                  <div className="mt-5 pt-3.5 border-t border-neutral-100">
                     <a
                       href={`https://wa.me/8801819642289?text=${encodeURIComponent(`Hello Heaven Furniture, I saw your "${selectedProject.title}" setup in ${selectedProject.location} and would like to order similar handcrafted furniture for my home.`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#163A2B] hover:bg-[#1f4e3b] px-6 py-3.5 text-xs sm:text-sm font-semibold text-white shadow-lg transition-all text-center"
+                      className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#163A2B] hover:bg-[#1f4e3b] active:scale-95 px-5 py-3 text-xs sm:text-sm font-semibold text-white shadow-lg transition-all text-center"
                     >
-                      <span>Inquire About This Furniture Setup on WhatsApp</span>
+                      <span>Inquire About Setup on WhatsApp</span>
                       <span>→</span>
                     </a>
                   </div>

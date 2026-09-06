@@ -137,7 +137,7 @@ export default function TransformationSlider() {
 
           {/* Interactive Room Project Switcher Tabs */}
           <Reveal delay={0.15}>
-            <div className="flex flex-wrap gap-2 p-1.5 rounded-2xl bg-white border border-neutral-200 shadow-xs self-start md:self-auto">
+            <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar p-1.5 rounded-2xl bg-white border border-neutral-200 shadow-xs w-full sm:w-auto">
               {ROOM_PROJECTS.map((room, idx) => (
                 <button
                   key={room.id}
@@ -145,7 +145,7 @@ export default function TransformationSlider() {
                     setActiveRoomIndex(idx);
                     setSliderPos(50);
                   }}
-                  className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                  className={`px-3 sm:px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap active:scale-95 transition-all cursor-pointer ${
                     activeRoomIndex === idx
                       ? "bg-[#163A2B] text-white shadow-sm"
                       : "text-neutral-600 hover:text-[#163A2B] hover:bg-neutral-100"
@@ -163,7 +163,7 @@ export default function TransformationSlider() {
           
           {/* Main Drag Slider Frame (Left 7 Cols) */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col">
-            <div className="relative aspect-[16/11] sm:aspect-[16/10] w-full select-none overflow-hidden rounded-[28px] sm:rounded-[32px] border border-neutral-200/90 shadow-[0_20px_50px_rgba(0,0,0,0.1)] bg-neutral-900 group flex-1">
+            <div className="relative aspect-[16/11] sm:aspect-[16/10] w-full select-none overflow-hidden rounded-[24px] sm:rounded-[32px] border border-neutral-200/90 shadow-[0_20px_50px_rgba(0,0,0,0.1)] bg-neutral-900 group flex-1">
               
               <AnimatePresence mode="wait">
                 <motion.div
@@ -202,13 +202,13 @@ export default function TransformationSlider() {
               </AnimatePresence>
 
               {/* FLOATING LUXURY PILL LABELS */}
-              <div className="pointer-events-none absolute left-4 sm:left-6 top-4 sm:top-6 z-20 flex items-center gap-2 rounded-full bg-black/75 px-3.5 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md border border-white/20 shadow-md">
-                <span className="h-2 w-2 rounded-full bg-neutral-400" />
+              <div className="pointer-events-none absolute left-3 sm:left-6 top-3 sm:top-6 z-20 flex items-center gap-1.5 sm:gap-2 rounded-full bg-black/75 px-2.5 sm:px-3.5 py-1 sm:py-1.5 text-[9px] sm:text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md border border-white/20 shadow-md">
+                <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-neutral-400" />
                 <span>{activeRoom.before.label}</span>
               </div>
 
-              <div className="pointer-events-none absolute right-4 sm:right-6 top-4 sm:top-6 z-20 flex items-center gap-2 rounded-full bg-[#163A2B]/95 px-3.5 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md border border-emerald-400/30 shadow-md">
-                <span className="h-2 w-2 rounded-full bg-[#E5A83B] animate-pulse" />
+              <div className="pointer-events-none absolute right-3 sm:right-6 top-3 sm:top-6 z-20 flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#163A2B]/95 px-2.5 sm:px-3.5 py-1 sm:py-1.5 text-[9px] sm:text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md border border-emerald-400/30 shadow-md">
+                <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#E5A83B] animate-pulse" />
                 <span>{activeRoom.after.label}</span>
               </div>
 
@@ -218,10 +218,10 @@ export default function TransformationSlider() {
                 style={{ left: `${sliderPos}%` }}
               >
                 {/* Center Circular Grip Badge */}
-                <div className="absolute left-1/2 top-1/2 flex h-11 w-11 sm:h-13 sm:w-13 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#163A2B] text-white shadow-2xl border-[3px] border-white transition-transform group-hover:scale-105">
+                <div className="absolute left-1/2 top-1/2 flex h-10 w-10 sm:h-13 sm:w-13 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#163A2B] text-white shadow-2xl border-[2.5px] sm:border-[3px] border-white transition-transform group-hover:scale-105">
                   <span className="absolute -inset-1 rounded-full border border-white/40 animate-ping opacity-30" />
                   <svg
-                    className="w-4.5 h-4.5 text-white"
+                    className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -244,8 +244,8 @@ export default function TransformationSlider() {
               />
 
               {/* Drag Hint Banner on Bottom */}
-              <div className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 z-20 bg-black/60 backdrop-blur-md px-4 py-1 rounded-full text-[10px] sm:text-[11px] font-semibold text-neutral-200 border border-white/10 flex items-center gap-2 whitespace-nowrap">
-                <span>◀ Drag slider horizontally to compare ▶</span>
+              <div className="pointer-events-none absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 bg-black/60 backdrop-blur-md px-3.5 sm:px-4 py-1 rounded-full text-[9px] sm:text-[11px] font-semibold text-neutral-200 border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                <span>◀ Slide horizontally to compare ▶</span>
               </div>
             </div>
           </div>
@@ -316,18 +316,18 @@ export default function TransformationSlider() {
                 </p>
 
                 {/* 3 Customer Value Badges */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-4">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl px-2.5 py-1.5 border border-white/10 text-center">
+                <div className="grid grid-cols-3 gap-1.5 sm:gap-2 mb-4">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl px-2 sm:px-2.5 py-1.5 border border-white/10 text-center">
                     <span className="text-[10px] font-bold text-[#E5A83B] block">100% Free</span>
-                    <span className="text-[9px] text-emerald-100/70">3D CAD Render</span>
+                    <span className="text-[9px] text-emerald-100/70 block leading-tight">3D Render</span>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl px-2.5 py-1.5 border border-white/10 text-center">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl px-2 sm:px-2.5 py-1.5 border border-white/10 text-center">
                     <span className="text-[10px] font-bold text-[#E5A83B] block">No Obligation</span>
-                    <span className="text-[9px] text-emerald-100/70">Zero Cost Visit</span>
+                    <span className="text-[9px] text-emerald-100/70 block leading-tight">Zero Cost Visit</span>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl px-2.5 py-1.5 border border-white/10 text-center">
-                    <span className="text-[10px] font-bold text-[#E5A83B] block">Wood Swatches</span>
-                    <span className="text-[9px] text-emerald-100/70">Delivered Home</span>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl px-2 sm:px-2.5 py-1.5 border border-white/10 text-center">
+                    <span className="text-[10px] font-bold text-[#E5A83B] block">Swatches</span>
+                    <span className="text-[9px] text-emerald-100/70 block leading-tight">Delivered</span>
                   </div>
                 </div>
               </div>
@@ -336,7 +336,7 @@ export default function TransformationSlider() {
               <div className="flex flex-col sm:flex-row items-center gap-2.5 pt-1">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 w-full sm:flex-1 rounded-2xl bg-[#E5A83B] hover:bg-[#d89728] text-[#111815] font-bold py-3 text-xs sm:text-[13px] shadow-md transition-all group cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:flex-1 rounded-2xl bg-[#E5A83B] hover:bg-[#d89728] active:scale-95 text-[#111815] font-bold py-3 text-xs sm:text-[13px] shadow-md transition-all group cursor-pointer"
                 >
                   <span>Book Free Consultation</span>
                   <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
@@ -346,7 +346,7 @@ export default function TransformationSlider() {
                   href="https://wa.me/8801960481983"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 w-full sm:w-auto px-4 py-3 rounded-2xl bg-white/15 hover:bg-white/25 text-white font-semibold text-xs border border-white/20 transition-colors shrink-0"
+                  className="inline-flex items-center justify-center gap-1.5 w-full sm:w-auto px-4 py-3 rounded-2xl bg-white/15 hover:bg-white/25 active:scale-95 text-white font-semibold text-xs border border-white/20 transition-colors shrink-0"
                 >
                   <span>WhatsApp</span>
                 </a>

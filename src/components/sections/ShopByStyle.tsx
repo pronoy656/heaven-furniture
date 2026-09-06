@@ -87,35 +87,35 @@ export default function ShopByStyle() {
               From modern minimalism to timeless classics, explore designs made for every lifestyle.
             </p>
 
-            <div className="mt-5 sm:mt-6 flex items-center gap-4 w-full">
+            <div className="mt-5 sm:mt-6 flex items-center gap-3 w-full">
               <Link
                 href="/shop"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#163A2B] hover:bg-[#0f281e] text-white px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-[13px] font-semibold shadow-[0_6px_18px_rgba(22,58,43,0.18)] hover:shadow-[0_10px_22px_rgba(22,58,43,0.25)] transition-all group"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#163A2B] hover:bg-[#0f281e] active:scale-95 text-white px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-[13px] font-semibold shadow-[0_6px_18px_rgba(22,58,43,0.18)] hover:shadow-[0_10px_22px_rgba(22,58,43,0.25)] transition-all group"
               >
                 <span>View All Styles</span>
                 <span className="text-sm leading-none transition-transform group-hover:translate-x-1">&rarr;</span>
               </Link>
 
               {/* Navigation arrows for small screens */}
-              <div className="flex items-center gap-1.5 lg:hidden ml-auto">
+              <div className="flex items-center gap-2 lg:hidden ml-auto">
                 <button
                   type="button"
                   onClick={() => scroll("left")}
                   aria-label="Scroll left"
-                  className="w-8 h-8 rounded-full border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-700 flex items-center justify-center transition-colors shadow-sm"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-neutral-300 bg-white hover:bg-neutral-50 active:scale-90 text-neutral-700 flex items-center justify-center transition-all shadow-xs"
                 >
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
                 <button
                   type="button"
                   onClick={() => scroll("right")}
                   aria-label="Scroll right"
-                  className="w-8 h-8 rounded-full border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-700 flex items-center justify-center transition-colors shadow-sm"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-neutral-300 bg-white hover:bg-neutral-50 active:scale-90 text-neutral-700 flex items-center justify-center transition-all shadow-xs"
                 >
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
               </div>
@@ -126,7 +126,7 @@ export default function ShopByStyle() {
           <div className="w-full lg:flex-1 min-w-0">
             <div
               ref={scrollContainerRef}
-              className="flex lg:grid lg:grid-cols-5 gap-2.5 sm:gap-3 xl:gap-3.5 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 pt-1 snap-x snap-mandatory scroll-smooth hide-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0"
+              className="flex lg:grid lg:grid-cols-5 gap-3 sm:gap-3.5 xl:gap-4 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 pt-1 snap-x snap-mandatory scroll-smooth hide-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0"
               style={{
                 scrollbarWidth: "none",
                 msOverflowStyle: "none",
@@ -136,14 +136,14 @@ export default function ShopByStyle() {
                 <Link
                   key={style.id}
                   href={style.href}
-                  className="group relative shrink-0 w-[175px] sm:w-[195px] lg:w-auto aspect-[3/4.2] rounded-[20px] sm:rounded-[22px] xl:rounded-[24px] overflow-hidden snap-start shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.15)] transition-all duration-300"
+                  className="group relative shrink-0 w-[180px] sm:w-[200px] lg:w-auto aspect-[3/4.2] rounded-[22px] sm:rounded-[24px] overflow-hidden snap-start shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.15)] active:scale-[0.98] transition-all duration-300"
                 >
                   {/* Background Image */}
                   <Image
                     src={style.image}
                     alt={`${style.name} furniture style`}
                     fill
-                    sizes="(max-width: 640px) 180px, (max-width: 1024px) 200px, (max-width: 1440px) 220px, 250px"
+                    sizes="(max-width: 640px) 190px, (max-width: 1024px) 210px, 250px"
                     className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
                     priority
                   />
@@ -152,7 +152,7 @@ export default function ShopByStyle() {
                   <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none" />
 
                   {/* Card Bottom Content */}
-                  <div className="absolute inset-x-0 bottom-0 p-3 sm:p-3.5 xl:p-4 flex items-end justify-between z-10">
+                  <div className="absolute inset-x-0 bottom-0 p-3.5 sm:p-4 flex items-end justify-between z-10">
                     <div className="pr-1">
                       <h3 className="text-white text-sm sm:text-base xl:text-[1.05rem] font-bold tracking-tight leading-tight group-hover:text-[#F3EFE6] transition-colors">
                         {style.name}
@@ -163,7 +163,7 @@ export default function ShopByStyle() {
                     </div>
 
                     {/* Circular Action Arrow Button */}
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-neutral-900 flex items-center justify-center flex-shrink-0 shadow-md transition-all duration-300 group-hover:scale-110 group-hover:bg-[#163A2B] group-hover:text-white">
+                    <div className="w-8 h-8 sm:w-8 sm:h-8 rounded-full bg-white text-neutral-900 flex items-center justify-center flex-shrink-0 shadow-md transition-all duration-300 group-hover:scale-110 group-hover:bg-[#163A2B] group-hover:text-white">
                       <svg
                         className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5"
                         fill="none"

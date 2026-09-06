@@ -199,7 +199,7 @@ export default function SocialProof() {
               type="button"
               onClick={prevSlide}
               aria-label="Previous testimonial"
-              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white hover:bg-[#163A2B] text-neutral-800 hover:text-white flex items-center justify-center shadow-md hover:shadow-lg border border-neutral-200 transition-all duration-300 cursor-pointer group"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white hover:bg-[#163A2B] active:scale-90 text-neutral-800 hover:text-white flex items-center justify-center shadow-md hover:shadow-lg border border-neutral-200 transition-all duration-300 cursor-pointer group"
             >
               <svg className="w-5 h-5 transition-transform group-hover:-translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -209,7 +209,7 @@ export default function SocialProof() {
               type="button"
               onClick={nextSlide}
               aria-label="Next testimonial"
-              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white hover:bg-[#163A2B] text-neutral-800 hover:text-white flex items-center justify-center shadow-md hover:shadow-lg border border-neutral-200 transition-all duration-300 cursor-pointer group"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white hover:bg-[#163A2B] active:scale-90 text-neutral-800 hover:text-white flex items-center justify-center shadow-md hover:shadow-lg border border-neutral-200 transition-all duration-300 cursor-pointer group"
             >
               <svg className="w-5 h-5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -325,13 +325,17 @@ export default function SocialProof() {
                 key={idx}
                 type="button"
                 onClick={() => setCurrentIndex(idx)}
-                className={`transition-all duration-300 rounded-full cursor-pointer ${
-                  isActive
-                    ? "w-8 h-2.5 bg-[#163A2B] rounded-full"
-                    : "w-2.5 h-2.5 bg-neutral-300 hover:bg-neutral-400"
-                }`}
+                className={`py-2 px-1 flex items-center cursor-pointer`}
                 aria-label={`Go to slide ${idx + 1}`}
-              />
+              >
+                <span
+                  className={`block transition-all duration-300 rounded-full ${
+                    isActive
+                      ? "w-8 h-2.5 bg-[#163A2B]"
+                      : "w-2.5 h-2.5 bg-neutral-300 hover:bg-neutral-400"
+                  }`}
+                />
+              </button>
             );
           })}
         </div>

@@ -6,7 +6,6 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Hero() {
-  const [isHotspotActive, setIsHotspotActive] = useState(true);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   // Close modal on Escape key
@@ -29,8 +28,8 @@ export default function Hero() {
       id="top"
       className="relative text-neutral-800 overflow-hidden min-h-[100dvh] w-full pt-24 sm:pt-28 lg:pt-32 pb-6 sm:pb-8 lg:pb-10 flex flex-col justify-between"
     >
-      {/* Full Background Image */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      {/* Full Background Image for Desktop / Tablets (lg and up) */}
+      <div className="absolute inset-0 z-0 pointer-events-none hidden lg:block">
         <Image
           src="/hero-section-bg-image.png"
           alt="Heaven Furniture Luxury Showroom & Living Space"
@@ -46,14 +45,20 @@ export default function Hero() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 relative z-20 w-full flex-1 flex flex-col justify-between">
         
         {/* Main Content Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto pt-4 sm:pt-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto pt-2 sm:pt-4">
           
-          {/* ================= LEFT COLUMN ================= */}
+          {/* ================= LEFT COLUMN: HEADLINE, CTAS, VALUE BADGES ================= */}
           <div className="lg:col-span-7 xl:col-span-6 flex flex-col items-start z-20">
             
+            {/* Editorial Atelier Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF2ED] border border-emerald-800/10 text-[#163A2B] text-xs font-bold uppercase tracking-[0.2em] mb-4 shadow-2xs">
+              <span>✦</span>
+              <span>CHATTOGRAM BESPOKE ATELIER</span>
+            </div>
+
             {/* Headline with Custom Editorial Serif & Golden Underline */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-[4.2rem] xl:text-[4.8rem] text-[#111815] font-normal leading-[1.12] tracking-tight max-w-3xl">
-              <span className="block whitespace-nowrap">Make Your Home</span>
+            <h1 className="font-display text-3xl sm:text-5xl lg:text-[4.2rem] xl:text-[4.8rem] text-[#111815] font-normal leading-[1.15] tracking-tight max-w-3xl">
+              <span className="block">Make Your Home</span>
               <span className="block mt-1 sm:mt-1.5">
                 More{" "}
                 <span className="relative inline-block text-[#163A2B] font-medium">
@@ -79,15 +84,15 @@ export default function Hero() {
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-5 sm:mt-6 text-neutral-600 text-sm sm:text-base leading-relaxed max-w-lg font-normal">
-              Discover a world of modern, stylish and high-quality furniture to create your dream space. Handcrafted with genuine solid hardwood.
+            <p className="mt-4 sm:mt-6 text-neutral-600 text-sm sm:text-base leading-relaxed max-w-lg font-normal">
+              Discover a world of modern, architectural solid-wood furniture tailored to your exact floor plan. Handcrafted from 100% seasoned Chittagong Teak and Shegun.
             </p>
 
             {/* Action Buttons with Zero-Jitter and Smooth Left-to-Right Green Fill */}
-            <div className="mt-7 sm:mt-8 flex flex-wrap items-center gap-4 sm:gap-5">
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3.5 sm:gap-5 w-full sm:w-auto">
               <Link
                 href="/shop"
-                className="relative inline-flex items-center justify-center gap-2 rounded-full bg-[#163A2B] hover:bg-[#102a1f] text-white px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-semibold shadow-[0_10px_25px_rgba(22,58,43,0.22)] hover:shadow-[0_14px_32px_rgba(22,58,43,0.3)] transition-all duration-300 group cursor-pointer"
+                className="relative inline-flex items-center justify-center gap-2 rounded-full bg-[#163A2B] hover:bg-[#102a1f] text-white px-7 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-semibold shadow-[0_10px_25px_rgba(22,58,43,0.22)] hover:shadow-[0_14px_32px_rgba(22,58,43,0.3)] transition-all duration-300 group cursor-pointer flex-1 sm:flex-initial text-center"
               >
                 <span>Explore Products</span>
                 <span className="text-base leading-none transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
@@ -97,7 +102,7 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={() => setIsVideoModalOpen(true)}
-                className="relative inline-flex items-center justify-center rounded-full border border-neutral-300/90 bg-white/95 text-neutral-800 px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-semibold shadow-xs overflow-hidden group cursor-pointer transition-colors duration-300 hover:border-[#163A2B]"
+                className="relative inline-flex items-center justify-center rounded-full border border-neutral-300/90 bg-white/95 text-neutral-800 px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-semibold shadow-xs overflow-hidden group cursor-pointer transition-colors duration-300 hover:border-[#163A2B] flex-1 sm:flex-initial"
               >
                 {/* Left to Right Green Background Sweep */}
                 <span className="absolute inset-0 bg-[#163A2B] -translate-x-full group-hover:translate-x-0 transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full" />
@@ -111,124 +116,77 @@ export default function Hero() {
               </button>
             </div>
 
-            {/* Feature Highlights Row */}
-            <div className="mt-10 sm:mt-12 lg:mt-14 grid grid-cols-3 gap-3 sm:gap-6 pt-5 border-t border-neutral-200/80 w-full max-w-lg">
+            {/* Feature Highlights Row (Clean & Responsive on all screens) */}
+            <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 pt-5 border-t border-neutral-200/80 w-full max-w-xl">
               {/* Feature 1 */}
-              <div className="flex items-start gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#EAF2ED]/80 backdrop-blur-sm text-[#163A2B] flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
+              <div className="flex items-center sm:items-start gap-2.5 bg-white/60 sm:bg-transparent p-2 sm:p-0 rounded-xl border sm:border-0 border-neutral-200/60">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#EAF2ED] text-[#163A2B] flex items-center justify-center flex-shrink-0">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.25V3.75m0 3.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-3.75h-3.75" />
                   </svg>
                 </div>
                 <div>
-                  <h2 className="text-xs sm:text-sm font-bold text-[#111815] leading-tight">Free Shipping</h2>
-                  <p className="text-[10px] sm:text-xs text-neutral-500 mt-0.5">On orders over ৳50,000</p>
+                  <h2 className="text-xs sm:text-sm font-bold text-[#111815] leading-tight">Free Delivery</h2>
+                  <p className="text-[10px] sm:text-xs text-neutral-500 mt-0.5">Orders over ৳50,000</p>
                 </div>
               </div>
 
               {/* Feature 2 */}
-              <div className="flex items-start gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#EAF2ED]/80 backdrop-blur-sm text-[#163A2B] flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
+              <div className="flex items-center sm:items-start gap-2.5 bg-white/60 sm:bg-transparent p-2 sm:p-0 rounded-xl border sm:border-0 border-neutral-200/60">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#EAF2ED] text-[#163A2B] flex items-center justify-center flex-shrink-0">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
                   </svg>
                 </div>
                 <div>
-                  <h2 className="text-xs sm:text-sm font-bold text-[#111815] leading-tight">10-Yr Timber Warranty</h2>
+                  <h2 className="text-xs sm:text-sm font-bold text-[#111815] leading-tight">10-Yr Warranty</h2>
                   <p className="text-[10px] sm:text-xs text-neutral-500 mt-0.5">100% seasoned teak</p>
                 </div>
               </div>
 
               {/* Feature 3 */}
-              <div className="flex items-start gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#EAF2ED]/80 backdrop-blur-sm text-[#163A2B] flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
+              <div className="flex items-center sm:items-start gap-2.5 bg-white/60 sm:bg-transparent p-2 sm:p-0 rounded-xl border sm:border-0 border-neutral-200/60">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#EAF2ED] text-[#163A2B] flex items-center justify-center flex-shrink-0">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
                   </svg>
                 </div>
                 <div>
                   <h2 className="text-xs sm:text-sm font-bold text-[#111815] leading-tight">Master Atelier</h2>
-                  <p className="text-[10px] sm:text-xs text-neutral-500 mt-0.5">Custom bespoke design</p>
+                  <p className="text-[10px] sm:text-xs text-neutral-500 mt-0.5">Bespoke custom fit</p>
                 </div>
               </div>
             </div>
 
           </div>
 
-          {/* ================= RIGHT HOTSPOT OVERLAY ================= */}
-          <div className="hidden lg:block lg:col-span-5 xl:col-span-6 relative h-full min-h-[360px]">
-            {/* Interactive Product Hotspot Pin on Sofa */}
-            <button
-              type="button"
-              className="absolute top-[52%] left-[30%] z-30 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer focus:outline-none"
-              onClick={() => setIsHotspotActive(!isHotspotActive)}
-              aria-label="Toggle Modern Lounge Chair details"
-            >
-              {/* Outer pulsating radar ring */}
-              <span className="absolute -inset-2.5 rounded-full bg-[#163A2B]/40 animate-ping opacity-75" />
-              <span className="absolute -inset-4 rounded-full border border-white/60 animate-pulse" />
+          {/* ================= RIGHT COLUMN: DEDICATED VISUAL SHOWCASE ON MOBILE ================= */}
+          <div className="lg:hidden w-full mt-2">
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-3xl overflow-hidden shadow-lg border border-neutral-200/90 bg-neutral-100 group">
+              <Image
+                src="/hero-section-bg-image.png"
+                alt="Heaven Furniture Luxury Living Room Showcase"
+                fill
+                priority
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               
-              {/* Main Hotspot Dot */}
-              <div className="relative w-7 h-7 rounded-full bg-white shadow-[0_4px_14px_rgba(0,0,0,0.25)] flex items-center justify-center border-2 border-white transition-transform hover:scale-110">
-                <div className="w-3.5 h-3.5 rounded-full bg-[#163A2B] border-2 border-white" />
-              </div>
-            </button>
-
-            {/* Pointer Connection Line to Product Card */}
-            {isHotspotActive && (
-              <svg
-                className="absolute top-[35%] left-[12%] w-32 h-24 pointer-events-none z-20"
-                viewBox="0 0 100 80"
-                fill="none"
-              >
-                <path
-                  d="M10 10 L50 45 L70 70"
-                  stroke="rgba(255, 255, 255, 0.95)"
-                  strokeWidth="2.5"
-                  strokeDasharray="3 3"
-                  className="drop-shadow"
-                />
-              </svg>
-            )}
-
-            {/* Floating Product Card */}
-            {isHotspotActive && (
-              <Link
-                href="/shop"
-                className="absolute top-[18%] -left-[6%] xl:left-[0%] z-30 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-3.5 shadow-[0_16px_40px_rgba(0,0,0,0.14)] border border-white/80 max-w-[260px] sm:max-w-[290px] transition-all duration-300 hover:scale-105 hover:ring-2 hover:ring-[#163A2B]/20 group"
-              >
-                <div className="flex items-center gap-3.5">
-                  {/* Product Thumbnail */}
-                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden bg-neutral-100 flex-shrink-0 border border-neutral-100">
-                    <Image
-                      src="/lounge-chair.jpg"
-                      alt="Modern Lounge Chair"
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform"
-                      sizes="64px"
-                    />
-                  </div>
-
-                  {/* Product Details */}
-                  <div className="flex flex-col">
-                    <span className="text-xs sm:text-sm font-semibold text-neutral-900 leading-snug group-hover:text-[#163A2B] transition-colors">
-                      Modern Lounge Chair
-                    </span>
-                    <span className="text-sm sm:text-base font-bold text-[#163A2B] mt-0.5">
-                      ৳38,500
-                    </span>
-                    <div className="flex items-center gap-1 mt-1">
-                      <div className="flex text-[#E5A83B] text-xs">
-                        {"★★★★★"}
-                      </div>
-                      <span className="text-[11px] font-semibold text-neutral-500 ml-1">
-                        4.9 (120+ reviews)
-                      </span>
-                    </div>
-                  </div>
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white pointer-events-none">
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#E5A83B] block">
+                    Featured Collection
+                  </span>
+                  <span className="text-xs sm:text-sm font-semibold">
+                    Haven Living Sanctuary &amp; Teak Suite
+                  </span>
                 </div>
-              </Link>
-            )}
+                <span className="text-[11px] font-medium bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/30">
+                  Chattogram
+                </span>
+              </div>
+            </div>
           </div>
 
         </div>

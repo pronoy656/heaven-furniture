@@ -121,7 +121,7 @@ export default function FAQ() {
                     href="https://wa.me/8801819642289?text=Hello%20Heaven%20Furniture,%20I%20have%20a%20question%20about%20your%20furniture."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-[#FAF9F5] border border-neutral-200/80 hover:border-[#163A2B]/40 hover:bg-white transition-all group cursor-pointer"
+                    className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-[#FAF9F5] border border-neutral-200/80 hover:border-[#163A2B]/40 hover:bg-white active:scale-[0.98] transition-all group cursor-pointer"
                   >
                     <div className="w-10 h-10 rounded-xl bg-emerald-100 text-[#163A2B] flex items-center justify-center shrink-0 group-hover:bg-[#163A2B] group-hover:text-white transition-colors">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
@@ -141,7 +141,7 @@ export default function FAQ() {
                   {/* Phone Hotline */}
                   <a
                     href="tel:+8801819642289"
-                    className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-[#FAF9F5] border border-neutral-200/80 hover:border-[#163A2B]/40 hover:bg-white transition-all group cursor-pointer"
+                    className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-[#FAF9F5] border border-neutral-200/80 hover:border-[#163A2B]/40 hover:bg-white active:scale-[0.98] transition-all group cursor-pointer"
                   >
                     <div className="w-10 h-10 rounded-xl bg-[#EAF2ED] text-[#163A2B] flex items-center justify-center shrink-0 group-hover:bg-[#163A2B] group-hover:text-white transition-colors">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
@@ -185,7 +185,7 @@ export default function FAQ() {
                   href="https://wa.me/8801819642289?text=Hello%20Heaven%20Furniture,%20I%20have%20a%20custom%20inquiry%20regarding%20your%20furniture."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#163A2B] hover:bg-[#1f4e3b] px-6 py-3.5 text-xs sm:text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all text-center group cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#163A2B] hover:bg-[#1f4e3b] active:scale-95 px-6 py-3.5 text-xs sm:text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all text-center group cursor-pointer"
                 >
                   <span>Ask a Specialist on WhatsApp</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>

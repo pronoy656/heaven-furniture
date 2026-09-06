@@ -164,7 +164,7 @@ export default function DealsOfTheDay() {
                   <button
                     type="button"
                     onClick={(e) => toggleWishlist(e, deal.id)}
-                    className={`absolute top-3 right-3 z-20 w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center transition-all hover:scale-110 cursor-pointer border border-neutral-200/80 ${
+                    className={`absolute top-3 right-3 z-20 w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center transition-all hover:scale-110 active:scale-90 cursor-pointer border border-neutral-200/80 ${
                       isFav
                         ? "text-red-500 bg-red-50 border-red-200"
                         : "text-neutral-700 hover:text-red-500 hover:bg-neutral-50"
@@ -246,7 +246,7 @@ export default function DealsOfTheDay() {
                     <div className="flex items-center gap-2">
                       <Link
                         href={`/shop/${deal.id}`}
-                        className="px-3.5 py-2 rounded-full border border-neutral-300 hover:border-neutral-400 text-neutral-700 text-xs font-semibold transition-colors"
+                        className="px-3.5 py-2 rounded-full border border-neutral-300 hover:border-neutral-400 active:scale-95 text-neutral-700 text-xs font-semibold transition-all"
                       >
                         Details
                       </Link>
@@ -254,7 +254,7 @@ export default function DealsOfTheDay() {
                       <button
                         type="button"
                         onClick={(e) => handleAddToCart(e, deal)}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#163A2B] hover:bg-[#0f281e] text-white text-xs font-bold transition-all shadow hover:-translate-y-0.5 cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#163A2B] hover:bg-[#0f281e] active:scale-95 text-white text-xs font-bold transition-all shadow hover:-translate-y-0.5 cursor-pointer"
                         aria-label={`Add ${deal.name} to cart`}
                       >
                         <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.2">

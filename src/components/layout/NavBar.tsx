@@ -264,10 +264,11 @@ export default function NavBar() {
         </div>
 
         {/* 
-          LUXURY ARCHITECTURAL MEGA MENU:
-          - Real photography for each space
+          LUXURY ARCHITECTURAL MEGA MENU & MOBILE NAVIGATION DRAWER:
+          - Responsive scroll container (max-h-[82vh] overflow-y-auto)
+          - Dedicated Primary Page Links on Mobile
+          - Real photography for each room space
           - Direct sub-category deep links
-          - Meaningful and intuitive hierarchy
         */}
         <div
           className={`grid transition-[grid-template-rows,opacity,visibility] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
@@ -277,8 +278,47 @@ export default function NavBar() {
           }`}
         >
           <div className="overflow-hidden">
-            <div className="pt-4 mt-3 border-t border-neutral-200/80 space-y-4">
+            <div className="pt-4 mt-3 border-t border-neutral-200/80 space-y-4 max-h-[72vh] sm:max-h-[80vh] overflow-y-auto pr-1">
               
+              {/* Mobile Primary Page Links Grid (Shown on mobile screens < lg) */}
+              <div className="lg:hidden pb-3 border-b border-neutral-200/80">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-[#163A2B] block mb-2.5">
+                  Navigation Pages
+                </span>
+                <div className="grid grid-cols-2 gap-2">
+                  {navLinks.map((link) => {
+                    const isActive =
+                      link.href === "/"
+                        ? pathname === "/"
+                        : pathname.startsWith(link.href);
+
+                    return (
+                      <Link
+                        key={link.label}
+                        href={link.href}
+                        onClick={() => setExpanded(false)}
+                        className={`px-3.5 py-2.5 rounded-xl font-body text-xs flex items-center justify-between transition-all ${
+                          isActive
+                            ? "bg-[#163A2B] text-white font-semibold shadow-xs"
+                            : "bg-[#FAF9F5] text-neutral-800 border border-neutral-200/80 hover:bg-[#EAF2ED]"
+                        }`}
+                      >
+                        <span>{link.label}</span>
+                        {link.label === "Deals" ? (
+                          <span className={`text-[9px] px-1.5 py-0.5 rounded-full font-bold uppercase ${
+                            isActive ? "bg-[#E5A83B] text-[#111815]" : "bg-amber-100 text-amber-900"
+                          }`}>
+                            Sale
+                          </span>
+                        ) : (
+                          <span className={isActive ? "text-white/60" : "text-neutral-400"}>→</span>
+                        )}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+
               {/* Header Row */}
               <div className="flex items-center justify-between gap-4 pb-2 border-b border-neutral-100">
                 <div>
@@ -293,9 +333,9 @@ export default function NavBar() {
                 <Link
                   href="/shop"
                   onClick={() => setExpanded(false)}
-                  className="text-xs font-bold text-[#163A2B] hover:text-[#1f4e3b] flex items-center gap-1"
+                  className="text-xs font-bold text-[#163A2B] hover:text-[#1f4e3b] flex items-center gap-1 shrink-0"
                 >
-                  <span>Browse All Products</span>
+                  <span>Browse All</span>
                   <span>→</span>
                 </Link>
               </div>
@@ -334,7 +374,7 @@ export default function NavBar() {
                             <Link
                               href={link.href}
                               onClick={() => setExpanded(false)}
-                              className="text-xs text-neutral-600 hover:text-[#163A2B] hover:translate-x-0.5 font-medium transition-all block py-0.5"
+                              className="text-xs text-neutral-600 hover:text-[#163A2B] hover:translate-x-0.5 font-medium transition-all block py-1"
                             >
                               • {link.label}
                             </Link>
@@ -347,7 +387,7 @@ export default function NavBar() {
                       <Link
                         href={cat.href}
                         onClick={() => setExpanded(false)}
-                        className="text-[11px] font-bold text-[#163A2B] hover:text-[#1f4e3b] flex items-center justify-between"
+                        className="text-[11px] font-bold text-[#163A2B] hover:text-[#1f4e3b] flex items-center justify-between py-1"
                       >
                         <span>View Collection</span>
                         <span>→</span>
@@ -357,22 +397,31 @@ export default function NavBar() {
                 ))}
               </div>
 
-              {/* Bottom Trust Banner */}
+              {/* Bottom Trust & Contact Banner */}
               <div className="pt-3 border-t border-neutral-100 flex flex-wrap items-center justify-between gap-3 text-xs text-neutral-500">
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-emerald-600" />
                   <span className="font-semibold text-neutral-700">100% Solid Kiln-Seasoned Shegun &amp; Mahogany</span>
                 </div>
                 
-                <Link
-                  href="/deals"
-                  onClick={() => setExpanded(false)}
-                  className="font-bold text-[#E5A83B] bg-[#163A2B] px-3.5 py-1.5 rounded-full text-xs hover:bg-[#1f4e3b] text-white transition-colors"
-                >
-                  Explore Flash Promo Deals (-25% Off) →
-                </Link>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="https://wa.me/8801819642289"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-neutral-700 hover:text-[#163A2B] px-3 py-1 rounded-full border border-neutral-200 bg-white"
+                  >
+                    💬 WhatsApp Concierge
+                  </a>
+                  <Link
+                    href="/deals"
+                    onClick={() => setExpanded(false)}
+                    className="font-bold text-[#E5A83B] bg-[#163A2B] px-3.5 py-1.5 rounded-full text-xs hover:bg-[#1f4e3b] transition-colors"
+                  >
+                    Flash Deals →
+                  </Link>
+                </div>
               </div>
-
             </div>
           </div>
         </div>
