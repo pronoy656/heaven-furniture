@@ -50,10 +50,10 @@ export default function Hero() {
           {/* ================= LEFT COLUMN: HEADLINE, CTAS, VALUE BADGES ================= */}
           <div className="lg:col-span-7 xl:col-span-6 flex flex-col items-start z-20">
             
-            {/* Editorial Atelier Badge */}
+            {/* Handcrafted Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF2ED] border border-emerald-800/10 text-[#163A2B] text-xs font-bold uppercase tracking-[0.2em] mb-4 shadow-2xs">
               <span>✦</span>
-              <span>CHATTOGRAM BESPOKE ATELIER</span>
+              <span>HANDCRAFTED IN CHATTOGRAM</span>
             </div>
 
             {/* Headline with Custom Editorial Serif & Golden Underline */}

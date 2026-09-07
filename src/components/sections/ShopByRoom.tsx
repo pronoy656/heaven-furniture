@@ -60,7 +60,7 @@ export default function ShopByRoom() {
           <Reveal>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EAF2ED] border border-emerald-800/10 text-[#163A2B] text-xs font-bold uppercase tracking-[0.2em] mb-4">
               <span>✦</span>
-              <span>CURATED SPACES</span>
+              <span>FURNITURE FOR EVERY ROOM</span>
             </div>
           </Reveal>
 

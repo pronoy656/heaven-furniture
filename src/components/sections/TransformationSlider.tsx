@@ -41,7 +41,7 @@ const ROOM_PROJECTS: TransformationRoom[] = [
       description: "Under-construction raw concrete space with exposed masonry and zero acoustics.",
     },
     after: {
-      label: "Bespoke Heaven Interior",
+      label: "Furnished Luxury Interior",
       image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2000&auto=format&fit=crop",
       description: "Custom modular sofa, fluted teak coffee table, and warm ambient styling.",
     },
@@ -60,7 +60,7 @@ const ROOM_PROJECTS: TransformationRoom[] = [
     before: {
       label: "Unfinished Bare Room",
       image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2000&auto=format&fit=crop",
-      description: "Unpainted raw walls and vacant unfinished floors awaiting bespoke fit-out.",
+      description: "Unpainted raw walls and vacant unfinished floors awaiting custom luxury furniture.",
     },
     after: {
       label: "Heirloom Bedroom Suite",
