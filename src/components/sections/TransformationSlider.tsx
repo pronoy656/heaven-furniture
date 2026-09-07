@@ -181,7 +181,6 @@ export default function TransformationSlider() {
                     fill
                     sizes="(max-width: 1024px) 100vw, 60vw"
                     className="object-cover object-center pointer-events-none"
-                    priority
                   />
 
                   {/* BEFORE IMAGE (Clipped Overlay Layer) */}
@@ -195,7 +194,6 @@ export default function TransformationSlider() {
                       fill
                       sizes="(max-width: 1024px) 100vw, 60vw"
                       className="object-cover object-center pointer-events-none filter brightness-95 contrast-95"
-                      priority
                     />
                   </div>
                 </motion.div>

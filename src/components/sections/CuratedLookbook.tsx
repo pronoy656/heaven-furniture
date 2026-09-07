@@ -294,7 +294,6 @@ export default function CuratedLookbook() {
                     src={currentRoom.image}
                     alt={currentRoom.title}
                     fill
-                    priority
                     className="object-cover object-center"
                     sizes="(max-width: 1024px) 100vw, 66vw"
                   />

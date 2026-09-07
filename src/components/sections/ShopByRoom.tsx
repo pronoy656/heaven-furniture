@@ -91,7 +91,6 @@ export default function ShopByRoom() {
                   src={living.image}
                   alt={living.title}
                   fill
-                  priority
                   className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108 filter brightness-[0.98]"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
