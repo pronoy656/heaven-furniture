@@ -196,51 +196,51 @@ export default function RealWork() {
       </div>
 
       {/* 45-Degree Angled Animated 3D Marquee Track */}
-      <div className="relative w-full overflow-hidden py-10 my-4">
+      <div className="relative w-full overflow-hidden py-4 sm:py-10 my-2 sm:my-4">
         
-        {/* Soft edge gradient masks */}
-        <div className="pointer-events-none absolute left-0 inset-y-0 w-24 sm:w-48 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/80 to-transparent z-20" />
-        <div className="pointer-events-none absolute right-0 inset-y-0 w-24 sm:w-48 bg-gradient-to-l from-[#FAF9F5] via-[#FAF9F5]/80 to-transparent z-20" />
+        {/* Soft edge gradient masks (Desktop only; completely unblurred & crystal clear on mobile) */}
+        <div className="pointer-events-none absolute left-0 inset-y-0 hidden sm:block w-32 sm:w-48 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/80 to-transparent z-20" />
+        <div className="pointer-events-none absolute right-0 inset-y-0 hidden sm:block w-32 sm:w-48 bg-gradient-to-l from-[#FAF9F5] via-[#FAF9F5]/80 to-transparent z-20" />
 
         {/* 45-degree Angled Perspective Transformation Wrapper */}
-        <div className="transform -rotate-2 sm:-rotate-3 scale-[1.03] space-y-6 sm:space-y-8">
+        <div className="transform -rotate-1.5 sm:-rotate-3 scale-[1.02] sm:scale-[1.03] space-y-3.5 sm:space-y-8">
           
           {/* Marquee Row 1: Sliding Left (Smooth Infinite Loop) */}
-          <div className="flex gap-6 w-max animate-marquee hover:[animation-play-state:paused]">
+          <div className="flex gap-3.5 sm:gap-6 w-max animate-marquee hover:[animation-play-state:paused]">
             {[...ROW_1_PROJECTS, ...ROW_1_PROJECTS].map((item, idx) => (
               <div
                 key={`r1-${item.id}-${idx}`}
                 onClick={() => setSelectedProject(item)}
-                className="group relative w-[320px] sm:w-[420px] h-[260px] sm:h-[300px] rounded-3xl overflow-hidden bg-neutral-900 border border-neutral-200/50 shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer shrink-0"
+                className="group relative w-[220px] sm:w-[420px] h-[165px] sm:h-[300px] rounded-2xl sm:rounded-3xl overflow-hidden bg-neutral-900 border border-neutral-200/60 shadow-sm sm:shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer shrink-0"
               >
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 320px, 420px"
+                  sizes="(max-width: 640px) 220px, 420px"
                 />
 
-                {/* Refined Subtle Bottom Linear Gradient (Much clearer & brighter) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none" />
+                {/* Subtle Bottom Linear Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
                 {/* Top Location & Category Tag */}
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                  <span className="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md text-[11px] font-semibold text-white uppercase tracking-wider border border-white/20">
+                <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-4 sm:left-4 sm:right-4 flex items-center justify-between z-10 gap-1">
+                  <span className="px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-black/45 backdrop-blur-md text-[9px] sm:text-[11px] font-semibold text-white uppercase tracking-wider border border-white/20 truncate max-w-[120px] sm:max-w-none">
                     {item.categoryLabel}
                   </span>
-                  <span className="text-[11px] text-[#E5A83B] bg-black/40 px-2.5 py-1 rounded-full backdrop-blur-md font-medium border border-white/10">
-                    {item.location}
+                  <span className="text-[9px] sm:text-[11px] text-[#E5A83B] bg-black/45 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full backdrop-blur-md font-medium border border-white/10 shrink-0">
+                    {item.location.split(",")[0]}
                   </span>
                 </div>
 
                 {/* Bottom Project Details */}
-                <div className="absolute bottom-4 left-4 right-4 z-10 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
-                  <h4 className="font-display text-base sm:text-lg font-bold text-white leading-snug group-hover:text-[#E5A83B] transition-colors">
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 z-10 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+                  <h4 className="font-display text-xs sm:text-base md:text-lg font-bold text-white leading-snug group-hover:text-[#E5A83B] transition-colors line-clamp-1">
                     {item.title}
                   </h4>
-                  <p className="text-[11px] text-neutral-200 mt-1 flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-sm" />
+                  <p className="text-[9px] sm:text-[11px] text-neutral-200 mt-0.5 sm:mt-1 flex items-center gap-1.5 line-clamp-1">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-sm shrink-0" />
                     {item.timber}
                   </p>
                 </div>
@@ -249,41 +249,41 @@ export default function RealWork() {
           </div>
 
           {/* Marquee Row 2: Sliding Right (Smooth Infinite Loop) */}
-          <div className="flex gap-6 w-max animate-marquee-reverse hover:[animation-play-state:paused]">
+          <div className="flex gap-3.5 sm:gap-6 w-max animate-marquee-reverse hover:[animation-play-state:paused]">
             {[...ROW_2_PROJECTS, ...ROW_2_PROJECTS].map((item, idx) => (
               <div
                 key={`r2-${item.id}-${idx}`}
                 onClick={() => setSelectedProject(item)}
-                className="group relative w-[320px] sm:w-[420px] h-[260px] sm:h-[300px] rounded-3xl overflow-hidden bg-neutral-900 border border-neutral-200/50 shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer shrink-0"
+                className="group relative w-[220px] sm:w-[420px] h-[165px] sm:h-[300px] rounded-2xl sm:rounded-3xl overflow-hidden bg-neutral-900 border border-neutral-200/60 shadow-sm sm:shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer shrink-0"
               >
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 320px, 420px"
+                  sizes="(max-width: 640px) 220px, 420px"
                 />
 
-                {/* Refined Subtle Bottom Linear Gradient (Much clearer & brighter) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none" />
+                {/* Subtle Bottom Linear Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
                 {/* Top Location & Category Tag */}
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                  <span className="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md text-[11px] font-semibold text-white uppercase tracking-wider border border-white/20">
+                <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-4 sm:left-4 sm:right-4 flex items-center justify-between z-10 gap-1">
+                  <span className="px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-black/45 backdrop-blur-md text-[9px] sm:text-[11px] font-semibold text-white uppercase tracking-wider border border-white/20 truncate max-w-[120px] sm:max-w-none">
                     {item.categoryLabel}
                   </span>
-                  <span className="text-[11px] text-[#E5A83B] bg-black/40 px-2.5 py-1 rounded-full backdrop-blur-md font-medium border border-white/10">
-                    {item.location}
+                  <span className="text-[9px] sm:text-[11px] text-[#E5A83B] bg-black/45 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full backdrop-blur-md font-medium border border-white/10 shrink-0">
+                    {item.location.split(",")[0]}
                   </span>
                 </div>
 
                 {/* Bottom Project Details */}
-                <div className="absolute bottom-4 left-4 right-4 z-10 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
-                  <h4 className="font-display text-base sm:text-lg font-bold text-white leading-snug group-hover:text-[#E5A83B] transition-colors">
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 z-10 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+                  <h4 className="font-display text-xs sm:text-base md:text-lg font-bold text-white leading-snug group-hover:text-[#E5A83B] transition-colors line-clamp-1">
                     {item.title}
                   </h4>
-                  <p className="text-[11px] text-neutral-200 mt-1 flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-sm" />
+                  <p className="text-[9px] sm:text-[11px] text-neutral-200 mt-0.5 sm:mt-1 flex items-center gap-1.5 line-clamp-1">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-sm shrink-0" />
                     {item.timber}
                   </p>
                 </div>
