@@ -25,7 +25,7 @@ export default function BrandIntro() {
   return (
     <section
       id="studio"
-      className="bg-[#FAF9F5] py-20 sm:py-24 lg:py-28 select-none"
+      className="content-auto bg-[#FAF9F5] py-20 sm:py-24 lg:py-28 select-none"
     >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         

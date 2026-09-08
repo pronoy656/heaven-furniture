@@ -52,7 +52,7 @@ export default function ShopByRoom() {
   const { living, bedroom, bathroom, dining } = ROOMS_DATA;
 
   return (
-    <section className="bg-white py-20 lg:py-32 border-t border-neutral-200/80">
+    <section className="content-auto bg-white py-20 lg:py-32 border-t border-neutral-200/80">
       <div className="mx-auto max-w-[1536px] px-4 sm:px-8 lg:px-12 xl:px-16">
         
         {/* Header with Luxury Typography & Signature Badge */}

@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
   const timber = TIMBER_TYPES[selectedTimber];
 
   return (
-    <section className="bg-[#FAF9F5] py-16 sm:py-20 lg:py-28 border-t border-neutral-200/80 relative overflow-hidden">
+    <section className="content-auto bg-[#FAF9F5] py-16 sm:py-20 lg:py-28 border-t border-neutral-200/80 relative overflow-hidden">
       
       {/* Ambient background glow */}
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[500px] w-[500px] rounded-full bg-[#163A2B]/5 blur-3xl" />

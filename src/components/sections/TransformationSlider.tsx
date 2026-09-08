@@ -105,7 +105,7 @@ export default function TransformationSlider() {
   const activeRoom = ROOM_PROJECTS[activeRoomIndex];
 
   return (
-    <section className="bg-[#FAF9F5] border-t border-neutral-200/80 py-16 sm:py-20 lg:py-28 relative overflow-hidden">
+    <section className="content-auto bg-[#FAF9F5] border-t border-neutral-200/80 py-16 sm:py-20 lg:py-28 relative overflow-hidden">
       
       {/* Ambient background atmosphere */}
       <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 w-[1000px] h-[400px] bg-gradient-to-b from-[#163A2B]/5 to-transparent blur-3xl" />

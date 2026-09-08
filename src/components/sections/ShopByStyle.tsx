@@ -145,7 +145,6 @@ export default function ShopByStyle() {
                     fill
                     sizes="(max-width: 640px) 190px, (max-width: 1024px) 210px, 250px"
                     className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
-                    priority
                   />
 
                   {/* Soft bottom-only gradient for crisp text readability */}

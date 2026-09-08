@@ -162,7 +162,7 @@ export default function RealWork() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   return (
-    <section id="work" className="relative bg-[#FAF9F5] border-t border-neutral-200/80 py-24 lg:py-32 overflow-hidden">
+    <section id="work" className="content-auto relative bg-[#FAF9F5] border-t border-neutral-200/80 py-24 lg:py-32 overflow-hidden">
       
       {/* Background ambient lighting */}
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[500px] w-[500px] rounded-full bg-[#163A2B]/5 blur-3xl" />
