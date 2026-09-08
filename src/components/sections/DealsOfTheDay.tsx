@@ -33,9 +33,18 @@ export default function DealsOfTheDay() {
   }, []);
 
   const dealProducts = [
-    ALL_PRODUCTS[1], // Boucle Chair
-    ALL_PRODUCTS[2], // Verona Dining Table
-    ALL_PRODUCTS[0], // Haven Modular Sofa
+    {
+      ...ALL_PRODUCTS[1], // Boucle Chair
+      dealDescription: "Sculptural curves meet warm organic texture. Handcrafted with solid teak legs and plush bouclé upholstery.",
+    },
+    {
+      ...ALL_PRODUCTS[2], // Verona Dining Table
+      dealDescription: "Cut from seasoned single-plank Chittagong Segun. Features an organic live-edge finish for timeless gatherings.",
+    },
+    {
+      ...ALL_PRODUCTS[0], // Haven Modular Sofa
+      dealDescription: "Deep feather-blend cushioning for supreme comfort. Handcrafted with a kiln-dried solid teak internal frame.",
+    },
   ];
 
   const toggleWishlist = (e: React.MouseEvent, id: string) => {
@@ -212,9 +221,9 @@ export default function DealsOfTheDay() {
                     </h3>
                   </Link>
 
-                  {/* Subtitle hidden on mobile to keep cards compact & sleek */}
-                  <p className="hidden sm:block text-xs text-neutral-500 line-clamp-2 mt-1.5 leading-relaxed">
-                    {deal.description}
+                  {/* 2-line balanced description for consistent compact card height */}
+                  <p className="text-xs text-neutral-500 line-clamp-2 mt-1.5 leading-relaxed min-h-[2rem] sm:min-h-[2.25rem]">
+                    {deal.dealDescription || deal.description}
                   </p>
 
                   {/* Stock Inventory Progress */}
@@ -255,7 +264,7 @@ export default function DealsOfTheDay() {
                       <button
                         type="button"
                         onClick={(e) => handleAddToCart(e, deal)}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#163A2B] hover:bg-[#0f281e] active:scale-95 text-white text-xs font-bold transition-all shadow hover:-translate-y-0.5 cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#163A2B] hover:bg-[#0f281e] active:scale-95 text-white text-xs font-bold transition-all shadow cursor-pointer"
                         aria-label={`Add ${deal.name} to cart`}
                       >
                         <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.2">
