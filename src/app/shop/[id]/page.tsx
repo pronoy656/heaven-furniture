@@ -185,7 +185,7 @@ export default function ProductDetailPage({
                 </label>
                 <span className="text-xs font-semibold text-[#163A2B]">{selectedFinish}</span>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                 {FINISHES.map((f) => {
                   const isSelected = selectedFinish === f.name;
                   return (
@@ -193,7 +193,7 @@ export default function ProductDetailPage({
                       key={f.name}
                       type="button"
                       onClick={() => setSelectedFinish(f.name)}
-                      className={`group relative flex items-center gap-2 px-3.5 py-2 rounded-xl border text-xs font-medium transition-all ${
+                      className={`group relative flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-xl border text-xs font-medium transition-all ${
                         isSelected
                           ? "border-[#163A2B] bg-[#EAF2ED] text-[#163A2B] shadow-sm font-semibold"
                           : "border-neutral-200 bg-white text-neutral-700 hover:border-neutral-300"

@@ -84,6 +84,7 @@ export default function NavBar() {
     { label: "Home", href: "/" },
     { label: "Shop", href: "/shop" },
     { label: "Categories", href: "/categories" },
+    { label: "Styles", href: "/styles" },
     { label: "Deals", href: "/deals" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },

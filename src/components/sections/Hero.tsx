@@ -117,11 +117,11 @@ export default function Hero() {
             </div>
 
             {/* Feature Highlights Row (Clean & Responsive on all screens) */}
-            <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 pt-5 border-t border-neutral-200/80 w-full max-w-xl">
+            <div className="mt-7 sm:mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 pt-4 sm:pt-5 border-t border-neutral-200/80 w-full max-w-xl">
               {/* Feature 1 */}
-              <div className="flex items-center sm:items-start gap-2.5 bg-white/60 sm:bg-transparent p-2 sm:p-0 rounded-xl border sm:border-0 border-neutral-200/60">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#EAF2ED] text-[#163A2B] flex items-center justify-center flex-shrink-0">
-                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
+              <div className="flex items-center sm:items-start gap-2.5 bg-white/80 sm:bg-transparent p-2.5 sm:p-0 rounded-2xl sm:rounded-none border sm:border-0 border-neutral-200/70 shadow-2xs sm:shadow-none">
+                <div className="w-8 h-8 rounded-full bg-[#EAF2ED] text-[#163A2B] flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.25V3.75m0 3.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-3.75h-3.75" />
                   </svg>
                 </div>
@@ -132,9 +132,9 @@ export default function Hero() {
               </div>
 
               {/* Feature 2 */}
-              <div className="flex items-center sm:items-start gap-2.5 bg-white/60 sm:bg-transparent p-2 sm:p-0 rounded-xl border sm:border-0 border-neutral-200/60">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#EAF2ED] text-[#163A2B] flex items-center justify-center flex-shrink-0">
-                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
+              <div className="flex items-center sm:items-start gap-2.5 bg-white/80 sm:bg-transparent p-2.5 sm:p-0 rounded-2xl sm:rounded-none border sm:border-0 border-neutral-200/70 shadow-2xs sm:shadow-none">
+                <div className="w-8 h-8 rounded-full bg-[#EAF2ED] text-[#163A2B] flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
                   </svg>
                 </div>
@@ -145,9 +145,9 @@ export default function Hero() {
               </div>
 
               {/* Feature 3 */}
-              <div className="flex items-center sm:items-start gap-2.5 bg-white/60 sm:bg-transparent p-2 sm:p-0 rounded-xl border sm:border-0 border-neutral-200/60">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#EAF2ED] text-[#163A2B] flex items-center justify-center flex-shrink-0">
-                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
+              <div className="flex items-center sm:items-start gap-2.5 bg-white/80 sm:bg-transparent p-2.5 sm:p-0 rounded-2xl sm:rounded-none border sm:border-0 border-neutral-200/70 shadow-2xs sm:shadow-none">
+                <div className="w-8 h-8 rounded-full bg-[#EAF2ED] text-[#163A2B] flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
                   </svg>
                 </div>
@@ -191,16 +191,16 @@ export default function Hero() {
 
         </div>
 
-        {/* ================= BOTTOM ROW: STATS CARD & SCROLL CUE (LIFTED ~15PX) ================= */}
-        <div className="mt-6 sm:mt-8 lg:mt-10 mb-3 sm:mb-4 -translate-y-3.5 sm:-translate-y-4 w-full grid grid-cols-1 md:grid-cols-3 items-end gap-6 pb-1">
+        {/* ================= BOTTOM ROW: STATS CARD & SCROLL CUE ================= */}
+        <div className="mt-6 sm:mt-8 lg:mt-10 mb-3 sm:mb-4 sm:-translate-y-4 w-full grid grid-cols-1 md:grid-cols-3 items-end gap-6 pb-1">
           
           {/* Stats Card */}
           <div className="w-full md:col-span-2 lg:col-span-1 lg:max-w-max">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-8 items-center divide-y sm:divide-y-0 sm:divide-x divide-neutral-400/40">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-8 items-center bg-white/60 sm:bg-transparent p-3 sm:p-0 rounded-2xl sm:rounded-none border sm:border-0 border-neutral-200/60 sm:divide-x divide-neutral-400/40">
               
               {/* Stat 1 */}
-              <div className="pt-2 sm:pt-0 sm:pr-4 flex flex-col">
-                <span className="font-body font-bold text-xl sm:text-2xl text-[#111815] tracking-tight">
+              <div className="p-2 sm:p-0 sm:pr-4 flex flex-col">
+                <span className="font-body font-bold text-lg sm:text-2xl text-[#111815] tracking-tight">
                   12K+
                 </span>
                 <span className="text-[11px] sm:text-xs text-neutral-500 font-medium mt-0.5">
@@ -209,8 +209,8 @@ export default function Hero() {
               </div>
 
               {/* Stat 2 */}
-              <div className="pt-3 sm:pt-0 sm:px-6 flex flex-col">
-                <span className="font-body font-bold text-xl sm:text-2xl text-[#111815] tracking-tight">
+              <div className="p-2 sm:p-0 sm:px-6 flex flex-col">
+                <span className="font-body font-bold text-lg sm:text-2xl text-[#111815] tracking-tight">
                   100%
                 </span>
                 <span className="text-[11px] sm:text-xs text-neutral-500 font-medium mt-0.5">
@@ -219,12 +219,12 @@ export default function Hero() {
               </div>
 
               {/* Stat 3 */}
-              <div className="pt-3 sm:pt-0 sm:px-6 flex flex-col">
+              <div className="p-2 sm:p-0 sm:px-6 flex flex-col">
                 <div className="flex items-center gap-1">
-                  <span className="font-body font-bold text-xl sm:text-2xl text-[#111815] tracking-tight">
+                  <span className="font-body font-bold text-lg sm:text-2xl text-[#111815] tracking-tight">
                     4.9
                   </span>
-                  <span className="text-[#E5A83B] text-lg leading-none">★</span>
+                  <span className="text-[#E5A83B] text-base sm:text-lg leading-none">★</span>
                 </div>
                 <span className="text-[11px] sm:text-xs text-neutral-500 font-medium mt-0.5">
                   Client Rating
@@ -232,8 +232,8 @@ export default function Hero() {
               </div>
 
               {/* Stat 4 */}
-              <div className="pt-3 sm:pt-0 sm:pl-6 flex flex-col">
-                <span className="font-body font-bold text-xl sm:text-2xl text-[#111815] tracking-tight">
+              <div className="p-2 sm:p-0 sm:pl-6 flex flex-col">
+                <span className="font-body font-bold text-lg sm:text-2xl text-[#111815] tracking-tight">
                   25+
                 </span>
                 <span className="text-[11px] sm:text-xs text-neutral-500 font-medium mt-0.5">

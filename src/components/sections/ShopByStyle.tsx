@@ -18,35 +18,35 @@ const STYLES: StyleCategory[] = [
     name: "Modern",
     items: "1,200+ Items",
     image: "/style-modern.jpg",
-    href: "/shop?style=modern",
+    href: "/styles?style=modern",
   },
   {
     id: "minimalist",
     name: "Minimalist",
     items: "950+ Items",
     image: "/style-minimalist.jpg",
-    href: "/shop?style=minimalist",
+    href: "/styles?style=minimalist",
   },
   {
     id: "classic",
     name: "Classic",
     items: "870+ Items",
     image: "/style-classic.jpg",
-    href: "/shop?style=classic",
+    href: "/styles?style=classic",
   },
   {
     id: "scandinavian",
     name: "Scandinavian",
     items: "760+ Items",
     image: "/style-scandinavian-3.jpg",
-    href: "/shop?style=scandinavian",
+    href: "/styles?style=scandinavian",
   },
   {
     id: "industrial",
     name: "Industrial",
     items: "650+ Items",
     image: "/style-industrial-brick.jpg",
-    href: "/shop?style=industrial",
+    href: "/styles?style=industrial",
   },
 ];
 
@@ -89,7 +89,7 @@ export default function ShopByStyle() {
 
             <div className="mt-5 sm:mt-6 flex items-center gap-3 w-full">
               <Link
-                href="/shop"
+                href="/styles"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#163A2B] hover:bg-[#0f281e] active:scale-95 text-white px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-[13px] font-semibold shadow-[0_6px_18px_rgba(22,58,43,0.18)] hover:shadow-[0_10px_22px_rgba(22,58,43,0.25)] transition-all group"
               >
                 <span>View All Styles</span>

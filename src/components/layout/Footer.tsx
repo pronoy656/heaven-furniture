@@ -148,6 +148,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/styles" className="hover:text-[#E5A83B] transition-colors">
+                  Design Styles &amp; Moodboards
+                </Link>
+              </li>
+              <li>
                 <Link href="/about#craftsmanship" className="hover:text-[#E5A83B] transition-colors">
                   Custom Wood Selection
                 </Link>
