@@ -137,7 +137,7 @@ export default function TransformationSlider() {
 
           {/* Interactive Room Project Switcher Tabs */}
           <Reveal delay={0.15}>
-            <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar p-1.5 rounded-2xl bg-white border border-neutral-200 shadow-xs w-full sm:w-auto">
+            <div className="flex items-center gap-1.5 overflow-x-auto hide-scrollbar scroll-smooth p-1.5 rounded-2xl bg-white border border-neutral-200 shadow-xs w-full sm:w-auto">
               {ROOM_PROJECTS.map((room, idx) => (
                 <button
                   key={room.id}
@@ -145,7 +145,7 @@ export default function TransformationSlider() {
                     setActiveRoomIndex(idx);
                     setSliderPos(50);
                   }}
-                  className={`px-3 sm:px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap active:scale-95 transition-all cursor-pointer ${
+                  className={`px-3 sm:px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap active:scale-95 transition-all cursor-pointer shrink-0 ${
                     activeRoomIndex === idx
                       ? "bg-[#163A2B] text-white shadow-sm"
                       : "text-neutral-600 hover:text-[#163A2B] hover:bg-neutral-100"
@@ -200,14 +200,16 @@ export default function TransformationSlider() {
               </AnimatePresence>
 
               {/* FLOATING LUXURY PILL LABELS */}
-              <div className="pointer-events-none absolute left-3 sm:left-6 top-3 sm:top-6 z-20 flex items-center gap-1.5 sm:gap-2 rounded-full bg-black/75 px-2.5 sm:px-3.5 py-1 sm:py-1.5 text-[9px] sm:text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md border border-white/20 shadow-md">
+              <div className="pointer-events-none absolute left-2.5 sm:left-6 top-2.5 sm:top-6 z-20 flex items-center gap-1 sm:gap-2 rounded-full bg-black/75 px-2.5 sm:px-3.5 py-1 sm:py-1.5 text-[9px] sm:text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md border border-white/20 shadow-md">
                 <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-neutral-400" />
-                <span>{activeRoom.before.label}</span>
+                <span className="hidden sm:inline">{activeRoom.before.label}</span>
+                <span className="sm:hidden">Raw Shell</span>
               </div>
 
-              <div className="pointer-events-none absolute right-3 sm:right-6 top-3 sm:top-6 z-20 flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#163A2B]/95 px-2.5 sm:px-3.5 py-1 sm:py-1.5 text-[9px] sm:text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md border border-emerald-400/30 shadow-md">
+              <div className="pointer-events-none absolute right-2.5 sm:right-6 top-2.5 sm:top-6 z-20 flex items-center gap-1 sm:gap-2 rounded-full bg-[#163A2B]/95 px-2.5 sm:px-3.5 py-1 sm:py-1.5 text-[9px] sm:text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md border border-emerald-400/30 shadow-md">
                 <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#E5A83B] animate-pulse" />
-                <span>{activeRoom.after.label}</span>
+                <span className="hidden sm:inline">{activeRoom.after.label}</span>
+                <span className="sm:hidden">Furnished Interior</span>
               </div>
 
               {/* VERTICAL DIVIDER LINE & DRAG HANDLE */}
@@ -253,12 +255,16 @@ export default function TransformationSlider() {
             
             {/* Top Card: Active Case Study Context */}
             <div className="bg-white rounded-3xl p-5 sm:p-6 border border-neutral-200/90 shadow-md">
-              <div className="flex items-center justify-between gap-2 mb-2.5">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EAF2ED] text-[#163A2B] text-[10px] font-bold uppercase tracking-wider">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EAF2ED] text-[#163A2B] text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">
                   <span>Residence Case Study</span>
                 </div>
-                <span className="text-[11px] font-bold text-neutral-500">
-                  📍 {activeRoom.location}
+                <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-neutral-600">
+                  <svg className="w-3.5 h-3.5 text-[#163A2B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                  </svg>
+                  <span>{activeRoom.location}</span>
                 </span>
               </div>
 

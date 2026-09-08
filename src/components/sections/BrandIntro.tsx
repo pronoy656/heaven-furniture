@@ -70,36 +70,39 @@ export default function BrandIntro() {
                     sizes="(max-width: 1024px) 100vw, 40vw"
                   />
                   
-                  {/* Subtle Founder Badge */}
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/95 px-3.5 py-1.5 shadow-sm border border-neutral-200">
+                  {/* Subtle Founder Badge - Positioned at bottom-left on mobile so it never covers the founder's face */}
+                  <div className="absolute bottom-3 left-3 sm:bottom-auto sm:top-4 sm:left-4 inline-flex items-center gap-2 rounded-full bg-white/95 px-3 sm:px-3.5 py-1 sm:py-1.5 shadow-sm border border-neutral-200 z-10">
                     <span className="w-2 h-2 rounded-full bg-[#163A2B]" />
-                    <span className="text-[11px] font-bold text-neutral-800 uppercase tracking-wider">
+                    <span className="text-[10.5px] sm:text-[11px] font-bold text-neutral-800 uppercase tracking-wider">
                       Est. 2020 • Chattogram
                     </span>
                   </div>
                 </div>
 
                 {/* Founder Info Card */}
-                <div className="p-6 bg-white shrink-0">
+                <div className="p-5 sm:p-6 bg-white shrink-0">
                   <span className="text-[11px] font-bold uppercase tracking-widest text-[#163A2B] block mb-1">
-                    Managing Director & Founder
+                    Managing Director &amp; Founder
                   </span>
                   
                   <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-[#111815]">
                     Abul Kalam Bhuiyan
                   </h3>
 
-                  <p className="text-xs text-[#5D6B64] mt-1 flex items-center gap-1.5">
-                    <span>📍</span>
-                    <span>Agrabad Access Road Atelier & Showroom, Chattogram</span>
+                  <p className="text-xs text-[#5D6B64] mt-1.5 flex items-center gap-1.5">
+                    <svg className="w-3.5 h-3.5 text-[#163A2B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                    </svg>
+                    <span>Agrabad Access Road Atelier &amp; Showroom, Chattogram</span>
                   </p>
 
-                  <div className="mt-4 pt-3.5 border-t border-neutral-100 flex items-center justify-between text-xs">
-                    <span className="text-neutral-700 font-medium flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#163A2B]" />
-                      10-Year Direct Structural Warranty
+                  <div className="mt-4 pt-3.5 border-t border-neutral-100 flex flex-wrap items-center justify-between gap-2 text-xs">
+                    <span className="text-neutral-700 font-medium flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs">
+                      <span className="w-2 h-2 rounded-full bg-[#163A2B] shrink-0" />
+                      <span>10-Year Direct Structural Warranty</span>
                     </span>
-                    <span className="text-[11px] text-[#163A2B] font-bold bg-[#EAF2ED] px-2.5 py-0.5 rounded-full">
+                    <span className="text-[10px] sm:text-[11px] text-[#163A2B] font-bold bg-[#EAF2ED] px-2.5 py-0.5 rounded-full whitespace-nowrap shrink-0">
                       Founder Certified
                     </span>
                   </div>

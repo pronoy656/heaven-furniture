@@ -93,55 +93,55 @@ export default function DealsOfTheDay() {
           </div>
 
           {/* Bespoke Horology-Inspired Atelier Countdown Pod */}
-          <div className="inline-flex items-center gap-3 sm:gap-4 bg-[#163A2B] text-white px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl shadow-[0_10px_28px_rgba(22,58,43,0.18)] border border-emerald-800/40 self-start lg:self-auto shrink-0">
-            <div className="flex items-center gap-2 pr-3 sm:pr-4 border-r border-emerald-700/60">
+          <div className="inline-flex items-center gap-2.5 sm:gap-4 bg-[#163A2B] text-white px-3 sm:px-5 py-2 sm:py-3 rounded-2xl shadow-[0_10px_28px_rgba(22,58,43,0.18)] border border-emerald-800/40 self-start lg:self-auto shrink-0">
+            <div className="flex items-center gap-1.5 sm:gap-2 pr-2.5 sm:pr-4 border-r border-emerald-700/60">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E5A83B] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E5A83B]"></span>
               </span>
-              <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-emerald-100/90 whitespace-nowrap">
+              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.14em] sm:tracking-[0.16em] text-emerald-100/90 whitespace-nowrap">
                 Ends In
               </span>
             </div>
             
-            <div className="flex items-center gap-2 sm:gap-2.5 font-mono">
+            <div className="flex items-center gap-1.5 sm:gap-2.5 font-mono">
               {/* Hours */}
               <div className="flex items-baseline gap-0.5">
-                <span className="text-base sm:text-lg font-bold text-white tracking-tight">
+                <span className="text-sm sm:text-lg font-bold text-white tracking-tight">
                   {String(timeLeft.hours).padStart(2, "0")}
                 </span>
-                <span className="text-[10px] font-semibold text-emerald-300/80 uppercase">h</span>
+                <span className="text-[9px] sm:text-[10px] font-semibold text-emerald-300/80 uppercase">h</span>
               </div>
               <span className="text-emerald-500/60 text-xs font-bold">:</span>
 
               {/* Mins */}
               <div className="flex items-baseline gap-0.5">
-                <span className="text-base sm:text-lg font-bold text-white tracking-tight">
+                <span className="text-sm sm:text-lg font-bold text-white tracking-tight">
                   {String(timeLeft.minutes).padStart(2, "0")}
                 </span>
-                <span className="text-[10px] font-semibold text-emerald-300/80 uppercase">m</span>
+                <span className="text-[9px] sm:text-[10px] font-semibold text-emerald-300/80 uppercase">m</span>
               </div>
               <span className="text-emerald-500/60 text-xs font-bold">:</span>
 
               {/* Secs */}
               <div className="flex items-baseline gap-0.5">
-                <span className="text-base sm:text-lg font-bold text-[#E5A83B] tracking-tight">
+                <span className="text-sm sm:text-lg font-bold text-[#E5A83B] tracking-tight">
                   {String(timeLeft.seconds).padStart(2, "0")}
                 </span>
-                <span className="text-[10px] font-semibold text-[#E5A83B]/90 uppercase">s</span>
+                <span className="text-[9px] sm:text-[10px] font-semibold text-[#E5A83B]/90 uppercase">s</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* ================= 3 ULTRA-PREMIUM DEALS CARDS ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {dealProducts.map((deal) => {
             const isFav = wishlist[deal.id];
             return (
               <div
                 key={deal.id}
-                className="group relative bg-white rounded-[28px] border border-neutral-200/90 p-4 sm:p-5 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(22,58,43,0.12)] hover:border-[#163A2B]/40 transition-all duration-300 flex flex-col justify-between"
+                className="group relative bg-white rounded-[24px] sm:rounded-[28px] border border-neutral-200/90 p-3.5 sm:p-5 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(22,58,43,0.12)] hover:border-[#163A2B]/40 transition-all duration-300 flex flex-col justify-between"
               >
                 {/* Top Image Container with Clean Separated Wishlist Button */}
                 <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[#F4F5F7] border border-neutral-100">
@@ -194,9 +194,9 @@ export default function DealsOfTheDay() {
                 </div>
 
                 {/* Details Section */}
-                <div className="pt-4 flex flex-col flex-grow">
+                <div className="pt-3 sm:pt-4 flex flex-col flex-grow">
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-[11px] uppercase tracking-wider text-neutral-400 font-semibold">
+                    <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-neutral-400 font-semibold">
                       {deal.categoryLabel}
                     </span>
                     <div className="flex items-center gap-1 text-xs">
@@ -207,12 +207,13 @@ export default function DealsOfTheDay() {
                   </div>
 
                   <Link href={`/shop/${deal.id}`}>
-                    <h3 className="font-bold text-base sm:text-[1.1rem] text-neutral-900 leading-snug group-hover:text-[#163A2B] transition-colors line-clamp-1">
+                    <h3 className="font-bold text-sm sm:text-base md:text-[1.1rem] text-neutral-900 leading-snug group-hover:text-[#163A2B] transition-colors line-clamp-1">
                       {deal.name}
                     </h3>
                   </Link>
 
-                  <p className="text-xs text-neutral-500 line-clamp-2 mt-1.5 leading-relaxed">
+                  {/* Subtitle hidden on mobile to keep cards compact & sleek */}
+                  <p className="hidden sm:block text-xs text-neutral-500 line-clamp-2 mt-1.5 leading-relaxed">
                     {deal.description}
                   </p>
 

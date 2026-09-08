@@ -98,8 +98,8 @@ export default function FAQ() {
           <div className="lg:col-span-5 xl:col-span-5">
             <div className="relative rounded-[28px] sm:rounded-[34px] bg-white p-6 sm:p-8 lg:p-9 border border-neutral-200/80 shadow-[0_20px_60px_rgba(17,24,21,0.06)] overflow-hidden">
               
-              {/* Top-Right Decorative Organic Curved Image */}
-              <div className="absolute top-0 right-0 w-[52%] sm:w-[48%] h-[230px] sm:h-[260px] pointer-events-none z-0 select-none">
+              {/* Top-Right Decorative Organic Curved Image (Desktop/Tablet Showcase, Hidden on Mobile to prevent text collision) */}
+              <div className="hidden sm:block absolute top-0 right-0 w-[52%] sm:w-[48%] h-[230px] sm:h-[260px] pointer-events-none z-0 select-none">
                 <svg
                   className="w-full h-full"
                   viewBox="0 0 300 260"

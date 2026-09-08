@@ -126,7 +126,7 @@ export default function ShopByStyle() {
           <div className="w-full lg:flex-1 min-w-0">
             <div
               ref={scrollContainerRef}
-              className="flex lg:grid lg:grid-cols-5 gap-3 sm:gap-3.5 xl:gap-4 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 pt-1 snap-x snap-mandatory scroll-smooth hide-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0"
+              className="flex lg:grid lg:grid-cols-5 gap-3 sm:gap-3.5 xl:gap-4 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 pt-1 snap-x snap-mandatory scroll-smooth hide-scrollbar px-1 sm:px-0"
               style={{
                 scrollbarWidth: "none",
                 msOverflowStyle: "none",

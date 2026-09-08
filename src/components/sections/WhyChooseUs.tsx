@@ -84,14 +84,14 @@ export default function WhyChooseUs() {
             
             <div>
               {/* Card Tag & Pillar Header */}
-              <div className="flex items-center justify-between gap-4 mb-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#163A2B]/10 text-[#163A2B] text-[11px] font-bold uppercase tracking-wider">
+              <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 mb-4 sm:mb-5">
+                <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-[#163A2B]/10 text-[#163A2B] text-[10px] sm:text-[11px] font-bold uppercase tracking-wider whitespace-nowrap">
                   <span>Pillar 01</span>
                   <span>•</span>
                   <span>Material Purity</span>
                 </div>
 
-                <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                <span className="text-[10px] sm:text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 sm:px-3 py-1 rounded-full border border-emerald-200 whitespace-nowrap">
                   Zero MDF / Zero Hollow Board
                 </span>
               </div>
@@ -173,13 +173,13 @@ export default function WhyChooseUs() {
             
             {/* CARD 02: Heritage Tenon Joinery (Top Half) */}
             <div className="bg-white rounded-3xl p-5 sm:p-6 border border-neutral-200/90 shadow-md group hover:border-[#163A2B]/40 hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center justify-between gap-4 mb-3">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAF2ED] text-[#163A2B] text-[10px] font-bold uppercase tracking-wider">
+              <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 mb-3">
+                <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[#EAF2ED] text-[#163A2B] text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">
                   <span>Pillar 02</span>
                   <span>•</span>
                   <span>Handcrafted Joinery</span>
                 </div>
-                <span className="text-[10px] font-bold text-neutral-400 uppercase">
+                <span className="text-[10px] font-bold text-neutral-400 uppercase whitespace-nowrap">
                   Generational Stability
                 </span>
               </div>

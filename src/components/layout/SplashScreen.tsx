@@ -40,7 +40,7 @@ export default function SplashScreen() {
 
   return (
     <div
-      className={`fixed inset-0 z-[99999] select-none overflow-hidden transition-opacity duration-500 ${
+      className={`fixed inset-0 z-[99999] select-none overflow-hidden transition-opacity duration-500 min-h-[100dvh] w-full ${
         isExiting ? "pointer-events-none" : "pointer-events-auto cursor-pointer"
       }`}
       onClick={handleSkip}
@@ -57,7 +57,7 @@ export default function SplashScreen() {
         }}
       >
         {/* Soft Ambient Radial Light on Left */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[320px] h-[320px] bg-gradient-to-l from-[#E5A83B]/10 to-transparent blur-2xl pointer-events-none" />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[220px] sm:w-[320px] h-[220px] sm:h-[320px] bg-gradient-to-l from-[#E5A83B]/10 to-transparent blur-2xl pointer-events-none" />
       </div>
 
       {/* ================= RIGHT SPLIT CURTAIN PANEL ================= */}
@@ -71,41 +71,41 @@ export default function SplashScreen() {
         }}
       >
         {/* Soft Ambient Radial Light on Right */}
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[320px] h-[320px] bg-gradient-to-r from-[#E5A83B]/10 to-transparent blur-2xl pointer-events-none" />
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[220px] sm:w-[320px] h-[220px] sm:h-[320px] bg-gradient-to-r from-[#E5A83B]/10 to-transparent blur-2xl pointer-events-none" />
       </div>
 
       {/* ================= CENTER BRAND HERO CONTENT ================= */}
       <div
-        className={`absolute inset-0 z-30 flex flex-col items-center justify-center pointer-events-none px-4 transition-all duration-350 ease-out will-change-transform ${
+        className={`absolute inset-0 z-30 flex flex-col items-center justify-center pointer-events-none px-4 max-w-full overflow-hidden transition-all duration-350 ease-out will-change-transform ${
           isExiting ? "opacity-0 scale-105" : "opacity-100 scale-100"
         }`}
       >
         {/* Top Brand Subtitle & Monogram */}
-        <div className="animate-splash-content flex items-center gap-2.5 sm:gap-3 mb-2 sm:mb-3">
-          <span className="h-px w-8 sm:w-16 bg-gradient-to-r from-transparent to-[#E5A83B]/60" />
-          <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.32em] text-[#E5A83B]">
+        <div className="animate-splash-content flex items-center justify-center gap-2 sm:gap-3 mb-1.5 sm:mb-3 max-w-full">
+          <span className="h-px w-5 sm:w-16 bg-gradient-to-r from-transparent to-[#E5A83B]/60 shrink-0" />
+          <span className="text-[9px] sm:text-xs font-bold uppercase tracking-[0.2em] sm:tracking-[0.32em] text-[#E5A83B] whitespace-nowrap">
             EST. 2020 • CHATTOGRAM
           </span>
-          <span className="h-px w-8 sm:w-16 bg-gradient-to-l from-transparent to-[#E5A83B]/60" />
+          <span className="h-px w-5 sm:w-16 bg-gradient-to-l from-transparent to-[#E5A83B]/60 shrink-0" />
         </div>
 
-        {/* GRAND ARCHITECTURAL "HEAVEN" WORDMARK */}
-        <div className="animate-splash-content relative select-none text-center">
-          <h1 className="font-display font-black text-[18vw] sm:text-[16vw] lg:text-[14vw] tracking-[0.04em] uppercase bg-gradient-to-b from-white via-[#F5F2EA] to-white/60 bg-clip-text text-transparent leading-none drop-shadow-[0_10px_35px_rgba(0,0,0,0.8)]">
+        {/* GRAND ARCHITECTURAL "HEAVEN" WORDMARK - Massive on PC/Monitor/Laptop, Scaled on Mobile */}
+        <div className="animate-splash-content relative select-none text-center max-w-full">
+          <h1 className="font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-[14vw] tracking-[0.04em] uppercase bg-gradient-to-b from-white via-[#F5F2EA] to-white/60 bg-clip-text text-transparent leading-none drop-shadow-[0_10px_35px_rgba(0,0,0,0.8)]">
             HEAVEN
           </h1>
         </div>
 
         {/* Bottom Atelier Descriptor & Progress Bar */}
-        <div className="animate-splash-content flex flex-col items-center gap-3 mt-1 sm:mt-2">
-          <div className="flex items-center gap-2 text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-neutral-300 uppercase">
-            <span>FURNITURE MART</span>
+        <div className="animate-splash-content flex flex-col items-center gap-2 sm:gap-3 mt-1.5 sm:mt-2 max-w-full text-center">
+          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-semibold tracking-[0.16em] sm:tracking-[0.25em] text-neutral-300 uppercase">
+            <span className="whitespace-nowrap">FURNITURE MART</span>
             <span className="text-[#E5A83B]">✦</span>
-            <span className="text-neutral-400">HANDCRAFTED ATELIER</span>
+            <span className="text-neutral-400 whitespace-nowrap">HANDCRAFTED ATELIER</span>
           </div>
 
           {/* Ultra-Fine Gold Progress Fill Line */}
-          <div className="w-36 sm:w-48 h-[2px] bg-white/10 rounded-full overflow-hidden mt-2 relative">
+          <div className="w-28 sm:w-48 h-[2px] bg-white/10 rounded-full overflow-hidden mt-1 sm:mt-2 relative">
             <div className="h-full bg-gradient-to-r from-[#163A2B] via-[#E5A83B] to-white rounded-full shadow-[0_0_10px_rgba(229,168,59,0.8)] animate-splash-progress" />
           </div>
         </div>
